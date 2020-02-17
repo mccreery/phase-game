@@ -43,13 +43,16 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = jumpVelocityY;
 
-            if (wallsHit.Any(WallFlags.LeftWall))
+            if (!wallsHit.Any(WallFlags.Floor))
             {
-                velocity.x = wallJumpVelocityX;
-            }
-            else if (wallsHit.Any(WallFlags.RightWall))
-            {
-                velocity.x = -wallJumpVelocityX;
+                if (wallsHit.Any(WallFlags.LeftWall))
+                {
+                    velocity.x = wallJumpVelocityX;
+                }
+                else if (wallsHit.Any(WallFlags.RightWall))
+                {
+                    velocity.x = -wallJumpVelocityX;
+                }
             }
         }
         jumpPending = false;
