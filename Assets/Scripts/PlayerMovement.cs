@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		flags = wallTest.getFlags();
+		flags = wallTest.GetFlags();
 		moveHorizontal();
 		Jump();
     }

@@ -13,7 +13,7 @@ public class WallTest : MonoBehaviour
         col2D = GetComponent<Collider2D>();
     }
 
-    public WallFlags getFlags()
+    public WallFlags GetFlags()
     {
         WallFlags flags = 0;
         List<ContactPoint2D> contactPoints = new List<ContactPoint2D>();
