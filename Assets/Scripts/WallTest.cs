@@ -1,23 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallTest : MonoBehaviour
+public static class WallTest
 {
-    private Collider2D col2D;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        col2D = GetComponent<Collider2D>();
-    }
-
-    public WallFlags GetFlags()
+    public static WallFlags GetFlags(Collider2D collider)
     {
         WallFlags flags = 0;
         List<ContactPoint2D> contactPoints = new List<ContactPoint2D>();
-        col2D.GetContacts(contactPoints);
+        collider.GetContacts(contactPoints);
 
         foreach (ContactPoint2D contactPoint in contactPoints)
         {
@@ -60,5 +51,22 @@ public static class WallFlagsExtensions
     public static bool All(this WallFlags flags, WallFlags other)
     {
         return (flags & other) == other;
+    }
+
+    /**
+     * <summary>Nullifies vector components facing towards walls.
+     * For example, when touching a left wall any negative X component is ignored.</summary>
+     */
+    public static Vector2 Clamp(this WallFlags flags, Vector2 delta)
+    {
+        if (flags.Any(WallFlags.LeftWall) && delta.x < 0 || flags.Any(WallFlags.RightWall) && delta.x > 0)
+        {
+            delta.x = 0;
+        }
+        if (flags.Any(WallFlags.Floor) && delta.y < 0 || flags.Any(WallFlags.Ceiling) && delta.y > 0)
+        {
+            delta.y = 0;
+        }
+        return delta;
     }
 }
