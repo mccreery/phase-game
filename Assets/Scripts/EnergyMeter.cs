@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class EnergyMeter : MonoBehaviour
 {
-	public int startEnergy = 100;
-	private int currentEnergy;
-	//public float degradeSpeed = 2.5f;
+	public int startEnergy = 500;
+	public int currentEnergy;
+	public bool canPhase = false;
 
 	public Slider energySlider;
 
@@ -15,14 +15,21 @@ public class EnergyMeter : MonoBehaviour
     void Start()
     {
 		currentEnergy = startEnergy;
+		energySlider.value = startEnergy;
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetButton("Phase")) {
+		canPhase = false;
+		if (Input.GetButton("Phase")) 
+		{
 			currentEnergy -= 1;
+			if (currentEnergy > 0){
+				canPhase = true;
+			}
 		}
 		energySlider.value = currentEnergy;
     }
+		
 }
