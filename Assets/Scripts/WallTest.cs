@@ -13,38 +13,33 @@ public class WallTest : MonoBehaviour
         col2D = GetComponent<Collider2D>();
     }
 
-    private WallType GetFlags()
+    public WallFlags getFlags()
     {
-        WallType flags = 0;
+        WallFlags flags = 0;
         List<ContactPoint2D> contactPoints = new List<ContactPoint2D>();
         col2D.GetContacts(contactPoints);
 
         foreach (ContactPoint2D contactPoint in contactPoints)
         {
-            flags |= GetType(contactPoint);
+            flags |= GetFlag(contactPoint);
         }
         return flags;
     }
 
-    public bool Test(WallType typeFlags)
-    {
-        return (GetFlags() & typeFlags) != 0;
-    }
+    public static WallFlags GetFlag(ContactPoint2D contactPoint) => GetFlag(contactPoint.normal);
 
-    public static WallType GetType(ContactPoint2D contactPoint) => GetType(contactPoint.normal);
-
-    public static WallType GetType(Vector2 contactNormal)
+    public static WallFlags GetFlag(Vector2 contactNormal)
     {
         float angle = Mathf.Atan2(contactNormal.y, contactNormal.x);
         float modAngle = Mathf.Repeat(angle + Mathf.PI / 4, Mathf.PI * 2);
 
         int quadrant = Mathf.FloorToInt(modAngle / (Mathf.PI / 2));
-        return (WallType)(1 << quadrant);
+        return (WallFlags)(1 << quadrant);
     }
 }
 
 [Flags]
-public enum WallType
+public enum WallFlags
 {
     LeftWall = 1,
     Floor = 2,
@@ -53,4 +48,17 @@ public enum WallType
 
     Horizontal = LeftWall | RightWall,
     Vertical = Floor | Ceiling
+}
+
+public static class WallFlagsExtensions
+{
+    public static bool Any(this WallFlags flags, WallFlags other)
+    {
+        return (flags & other) != 0;
+    }
+
+    public static bool All(this WallFlags flags, WallFlags other)
+    {
+        return (flags & other) == other;
+    }
 }
