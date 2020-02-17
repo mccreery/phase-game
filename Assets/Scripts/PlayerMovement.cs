@@ -16,10 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private WallFlags wallsHit;
     private bool jumpPending;
 
+	private EnergyMeter meter;
+
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
+		meter = GetComponent<EnergyMeter>();
     }
 
     void Update()
@@ -54,4 +57,16 @@ public class PlayerMovement : MonoBehaviour
         velocity = wallsHit.Clamp(velocity);
         rigidbody2D.velocity = velocity;
     }
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.gameObject.CompareTag("Takeable"))
+		{
+			coll.gameObject.SetActive(false);
+			if (meter.currentEnergy < (meter.startEnergy - 50))
+			{
+				meter.currentEnergy += 50;
+			}
+		}	
+	}
 }

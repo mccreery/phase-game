@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phase : MonoBehaviour
+public class ColliderPhaseable: MonoBehaviour
 {
 	private Collider2D p_collider;
 	public GameObject player;
@@ -25,4 +25,6 @@ public class Phase : MonoBehaviour
 			p_collider.enabled = true;	
 		}
     }
+
+
 }

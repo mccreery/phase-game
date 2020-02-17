@@ -15,7 +15,6 @@ public class EnergyMeter : MonoBehaviour
     void Start()
     {
 		currentEnergy = startEnergy;
-		energySlider.value = startEnergy;
     }
 
     // Update is called once per frame
