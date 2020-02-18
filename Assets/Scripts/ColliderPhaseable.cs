@@ -11,7 +11,6 @@ public class ColliderPhaseable: MonoBehaviour
     void Start()
     {
         collider2D = GetComponent<Collider2D>();
-        energyMeter = GetComponent<EnergyMeter>();
     }
 
     // Update is called once per frame
