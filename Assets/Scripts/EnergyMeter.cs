@@ -1,34 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class EnergyMeter : MonoBehaviour
 {
-	public int startEnergy = 500;
-	public int currentEnergy;
-	public bool canPhase = false;
+    public float startEnergy = 500;
+    public float depleteRate = 200;
+    public Slider energySlider;
 
-	public Slider energySlider;
+    // Clamping is handled by Slider
+    public float Energy
+    {
+        get => energySlider.value;
+        set => energySlider.value = value;
+    }
+    public bool CanPhase => energySlider.value > 0;
+    public bool Phasing => CanPhase && Input.GetButton("Phase");
 
-    // Start is called before the first frame update
     void Start()
     {
-		currentEnergy = startEnergy;
+        energySlider.minValue = 0;
+        energySlider.maxValue = startEnergy;
+        energySlider.value = startEnergy;
     }
 
-    // Update is called once per frame
     void Update()
     {
-		canPhase = false;
-		if (Input.GetButton("Phase")) 
-		{
-			currentEnergy -= 1;
-			if (currentEnergy > 0){
-				canPhase = true;
-			}
-		}
-		energySlider.value = currentEnergy;
+        if (Phasing)
+        {
+            energySlider.value -= depleteRate * Time.deltaTime;
+        }
     }
-		
 }

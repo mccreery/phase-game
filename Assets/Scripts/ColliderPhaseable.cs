@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class ColliderPhaseable: MonoBehaviour
 {
-	private Collider2D p_collider;
-	public GameObject player;
+    private new Collider2D collider2D;
+    public EnergyMeter energyMeter;
 
     // Start is called before the first frame update
     void Start()
     {
-		p_collider = GetComponent<Collider2D>();   
-	}
+        collider2D = GetComponent<Collider2D>();
+        energyMeter = GetComponent<EnergyMeter>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-		if (player.GetComponent<EnergyMeter>().canPhase)
-		{
-			p_collider.enabled = false;
-		} 
-		else 
-		{
-			p_collider.enabled = true;	
-		}
+        collider2D.enabled = !energyMeter.Phasing;
     }
-
-
 }
