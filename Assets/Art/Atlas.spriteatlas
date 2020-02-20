@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
-    totalSpriteSurfaceArea: 11520
+    totalSpriteSurfaceArea: 11776
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -47,6 +47,7 @@ SpriteAtlas:
   - {fileID: 5653941657638485266, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
   - {fileID: -2085453467593388577, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
   - {fileID: 5454924851970436159, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
+  - {fileID: 5257692952997449558, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
   - {fileID: -4213131581357639130, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
   - {fileID: 8134769751535444346, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
   - {fileID: 9071382878926815586, guid: 946480b3b61cbed4aafd725f196d7bfb, type: 3}
@@ -93,6 +94,7 @@ SpriteAtlas:
   - LabTileset_6
   - LabTileset_1
   - LabTileset_0
+  - LabTileset_45
   - LabTileset_3
   - LabTileset_44
   - LabTileset_2

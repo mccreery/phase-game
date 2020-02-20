@@ -272,6 +272,9 @@ TextureImporter:
   - first:
       213: 6172302163760858588
     second: LabTileset_44
+  - first:
+      213: 5257692952997449558
+    second: LabTileset_45
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1296,6 +1299,27 @@ TextureImporter:
       bones: []
       spriteID: cd5475d9d1c68a550800000000000000
       internalID: 6172302163760858588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabTileset_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fcc7162e317f840800000000000000
+      internalID: 5257692952997449558
       vertices: []
       indices: 
       edges: []
