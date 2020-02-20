@@ -9,19 +9,27 @@ public class CameraFollow : MonoBehaviour
 	public Transform target;
 	public float dampTime = 0.25f;
 
+    private Vector2 smoothPosition;
+
     private new Camera camera;
     public Collider2D limits;
 
     private void Start()
     {
         camera = GetComponent<Camera>();
+        smoothPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.SmoothDamp(transform.position, target.position, ref velocity, dampTime);
+        smoothPosition = Vector2.SmoothDamp(smoothPosition, target.position, ref velocity, dampTime);
         Clamp();
+
+        float pixelSize = GetPixelSize();
+        transform.position = new Vector2(
+            RoundToMultiple(smoothPosition.x, pixelSize),
+            RoundToMultiple(smoothPosition.y, GetPixelSize()));
     }
 
     private void Clamp()
@@ -33,8 +41,21 @@ public class CameraFollow : MonoBehaviour
         Bounds bounds = limits.bounds;
         bounds.extents -= (Vector3)cameraExtents;
 
-        transform.position = new Vector2(
-            Mathf.Clamp(transform.position.x, bounds.min.x, bounds.max.x),
-            Mathf.Clamp(transform.position.y, bounds.min.y, bounds.max.y));
+        smoothPosition = new Vector2(
+            Mathf.Clamp(smoothPosition.x, bounds.min.x, bounds.max.x),
+            Mathf.Clamp(smoothPosition.y, bounds.min.y, bounds.max.y));
+    }
+
+    private float GetPixelSize()
+    {
+        float worldHeight = camera.orthographicSize * 2;
+        float pixelHeight = camera.scaledPixelHeight;
+
+        return worldHeight / pixelHeight;
+    }
+
+    private float RoundToMultiple(float x, float step)
+    {
+        return Mathf.Round(x / step) * step;
     }
 }
