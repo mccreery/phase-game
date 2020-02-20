@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6242540312411057138, guid: 67662a76ef21867498512ceb74e9fb4b,
+  m_Sprite: {fileID: -8160988937649800657, guid: 946480b3b61cbed4aafd725f196d7bfb,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,6 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startEnergy: 500
-  currentEnergy: 0
-  canPhase: 0
+  depleteRate: 200
   energySlider: {fileID: 0}
