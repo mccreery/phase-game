@@ -6,10 +6,14 @@ public class ColliderPhaseable: MonoBehaviour
 {
     public new Collider2D collider2D;
     public EnergyMeter energyMeter;
+    public GameObject player;
 
     // Update is called once per frame
     void Update()
     {
-        collider2D.enabled = !energyMeter.Phasing;
+        //collider2D.enabled = !energyMeter.Phasing;
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), energyMeter.Phasing);
     }
+
+
 }
