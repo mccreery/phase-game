@@ -5,6 +5,7 @@ public class EnergyMeter : MonoBehaviour
 {
     public float startEnergy = 500;
     public float depleteRate = 200;
+    public float increaseRate = 5;
     public Slider energySlider;
 
     // Clamping is handled by Slider
@@ -28,6 +29,18 @@ public class EnergyMeter : MonoBehaviour
         if (Phasing)
         {
             energySlider.value -= depleteRate * Time.deltaTime;
+        } 
+        else
+        {
+            Increase();   
+        }
+    }
+
+    void Increase()
+    {
+        if (energySlider.value < startEnergy)
+        {
+            energySlider.value += increaseRate * Time.deltaTime;   
         }
     }
 }
