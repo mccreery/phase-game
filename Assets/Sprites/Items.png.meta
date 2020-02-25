@@ -4,31 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8033092973025764044
-    second: Items_0
+    second: Heart
   - first:
       213: 4337684191699249041
-    second: Items_1
+    second: Battery
   - first:
       213: 160392798892558373
-    second: Items_0
+    second: Heart
   - first:
       213: 2614719038445677065
-    second: Items_1
+    second: Battery
   - first:
       213: -488721925442295091
-    second: Items_2
+    second: BarEmpty
   - first:
       213: -7573354855677281409
-    second: Items_3
+    second: BarFull
   - first:
       213: -1369248715783372719
-    second: Items_2
+    second: BarEmpty
   - first:
       213: 5589875621261886454
-    second: Items_3
+    second: BarFull
   - first:
       213: 1801263428120863714
     second: Items_4
+  - first:
+      213: -5971942374765049077
+    second: Items_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -69,7 +72,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -113,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Items_0
+      name: Heart
       rect:
         serializedVersion: 2
         x: 0
@@ -121,7 +124,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,15 +137,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1
+      name: Battery
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,16 +158,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_2
+      name: BarEmpty
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 0, z: 4, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -176,43 +179,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_3
+      name: BarFull
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 0, z: 5, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 6f34ee7d24a339d40800000000000000
       internalID: 5589875621261886454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e3eb0c5b8f5ff810800000000000000
-      internalID: 1801263428120863714
       vertices: []
       indices: 
       edges: []
