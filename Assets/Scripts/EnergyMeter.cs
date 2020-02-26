@@ -3,44 +3,40 @@ using UnityEngine.UI;
 
 public class EnergyMeter : MonoBehaviour
 {
-    public float startEnergy = 500;
-    public float depleteRate = 200;
-    public float increaseRate = 5;
+    public float maxEnergy = 500.0f;
+    public float useRate = 200.0f;
+    public float recoveryRate = 5.0f;
+
     public Slider energySlider;
 
-    // Clamping is handled by Slider
+    private float energy;
     public float Energy
     {
-        get => energySlider.value;
-        set => energySlider.value = value;
+        get => energy;
+        set
+        {
+            energy = Mathf.Clamp(value, 0, maxEnergy);
+            energySlider.value = energySlider.minValue + (energy / maxEnergy) * (energySlider.maxValue - energySlider.minValue);
+        }
     }
-    public bool CanPhase => energySlider.value > 0;
+
+    public bool CanPhase => energy > 0;
     public bool Phasing => CanPhase && Input.GetButton("Phase");
 
-    void Start()
+    private void Start()
     {
-        energySlider.minValue = 0;
-        energySlider.maxValue = startEnergy;
-        energySlider.value = startEnergy;
+        Energy = maxEnergy;
     }
 
     void Update()
     {
         if (Phasing)
         {
-            energySlider.value -= depleteRate * Time.deltaTime;
+            Energy -= useRate * Time.deltaTime;
         } 
         else
         {
-            Increase();   
-        }
-    }
-
-    void Increase()
-    {
-        if (energySlider.value < startEnergy)
-        {
-            energySlider.value += increaseRate * Time.deltaTime;   
+            Energy += recoveryRate * Time.deltaTime;
         }
     }
 }

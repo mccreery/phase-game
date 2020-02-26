@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Reset : MonoBehaviour
 {
@@ -29,7 +27,7 @@ public class Reset : MonoBehaviour
         player.transform.position = resetPosition;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-        meter.Energy = meter.startEnergy;
+        meter.Energy = meter.maxEnergy;
         camera.transform.position = player.transform.position;
     }
 }
