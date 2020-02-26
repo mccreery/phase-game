@@ -7171,4 +7171,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider2D: {fileID: 4072757069471967075}
   energyMeter: {fileID: 1150009435}
-  player: {fileID: 0}
+  player: {fileID: 729808466}
