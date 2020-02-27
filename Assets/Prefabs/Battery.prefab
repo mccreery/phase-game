@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 314437378932471036}
   - component: {fileID: 314437378932471037}
   m_Layer: 0
-  m_Name: Takeable
-  m_TagString: Takeable
+  m_Name: Battery
+  m_TagString: Battery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private EnergyMeter meter;
 
+    public bool exit = false;
+
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -63,10 +65,16 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Takeable"))
+        if (coll.gameObject.CompareTag("Battery"))
         {
             meter.Energy += 50;
             Destroy(coll.gameObject);
         }
+        else if (coll.gameObject.CompareTag("Key"))
+        {
+            exit = true;
+            Destroy(coll.gameObject);
+        }
+
     }
 }
