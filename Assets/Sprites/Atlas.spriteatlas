@@ -35,7 +35,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 938bb4e76b7f05e49a272a3fae11a89d, type: 3}
     - {fileID: 2800000, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
     - {fileID: 2800000, guid: 294a336885761864c9b9fc37759238bb, type: 3}
-    totalSpriteSurfaceArea: 9472
+    totalSpriteSurfaceArea: 9018
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -67,10 +67,11 @@ SpriteAtlas:
   - {fileID: -3537314242600687600, guid: 13da1de764581504baaf8bf5c7e8d350, type: 3}
   - {fileID: -6884498642944724368, guid: 13da1de764581504baaf8bf5c7e8d350, type: 3}
   - {fileID: 3055835429183284874, guid: 13da1de764581504baaf8bf5c7e8d350, type: 3}
-  - {fileID: 4337684191699249041, guid: 294a336885761864c9b9fc37759238bb, type: 3}
-  - {fileID: -488721925442295091, guid: 294a336885761864c9b9fc37759238bb, type: 3}
-  - {fileID: -7573354855677281409, guid: 294a336885761864c9b9fc37759238bb, type: 3}
-  - {fileID: 8033092973025764044, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: 160392798892558373, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: 2614719038445677065, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -1369248715783372719, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: 5589875621261886454, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: 1801263428120863714, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: 3499683669041570755, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -551082938411016477, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -4950680412457382125, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
@@ -105,10 +106,11 @@ SpriteAtlas:
   - Steel_6
   - Steel_9
   - Steel_8
-  - Battery
-  - BarEmpty
-  - BarFull
-  - Heart
+  - Items_0
+  - Items_1
+  - Items_2
+  - Items_3
+  - Items_4
   - Doors_3
   - Doors_2
   - Doors_1

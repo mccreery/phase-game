@@ -32,6 +32,18 @@ TextureImporter:
   - first:
       213: -5971942374765049077
     second: Items_5
+  - first:
+      213: 160392798892558373
+    second: Items_0
+  - first:
+      213: 2614719038445677065
+    second: Items_1
+  - first:
+      213: -1369248715783372719
+    second: Items_2
+  - first:
+      213: 5589875621261886454
+    second: Items_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -116,15 +128,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heart
+      name: Items_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
+        x: 2
+        y: 50
+        width: 12
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,15 +149,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Battery
+      name: Items_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 4
+        y: 34
+        width: 8
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,16 +170,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarEmpty
+      name: Items_2
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 34
         width: 16
-        height: 16
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 0, z: 4, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -179,22 +191,43 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarFull
+      name: Items_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 36
+        y: 36
+        width: 9
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 6, y: 0, z: 5, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 6f34ee7d24a339d40800000000000000
       internalID: 5589875621261886454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_4
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 3
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3eb0c5b8f5ff810800000000000000
+      internalID: 1801263428120863714
       vertices: []
       indices: 
       edges: []
