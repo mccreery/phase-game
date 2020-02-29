@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_0.unity
     guid: 8110db6cc66fd674a917bf88d3950665
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: d0a60e58c92f3cc479b734d249d0c89f
   - enabled: 0
     path: Assets/Scenes/Prototype.unity
     guid: 1572634036c10b84b84f98b95fef5889
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChaseTest.unity
     guid: 4ad82d9b7cd729f41ba32b7f98ff40d5
   - enabled: 1

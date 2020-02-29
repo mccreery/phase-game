@@ -34,8 +34,11 @@ public class Dialog : MonoBehaviour
     }
 
     public void Sentence(string[] s) {
-        sentences = s;
-        StartCoroutine(Type());
+        if (s.Length > 0)
+        {
+            sentences = s;
+            StartCoroutine(Type());   
+        }
     }
 
     public void Next()
