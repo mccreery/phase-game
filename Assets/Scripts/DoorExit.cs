@@ -7,21 +7,14 @@ public class DoorExit : MonoBehaviour
 {
     public GameObject player;
 
-    // Update is called once per frame
-    /*
-    void Update()
+    void OnTriggerStay2D(Collider2D coll)
     {
-        if (player.GetComponent<PlayerMovement>().exit) {
-            player.GetComponent<PlayerMovement>().exit = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }*/
-    void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.CompareTag("Player") && player.GetComponent<PlayerMovement>().exit)
+        if (coll.gameObject.CompareTag("Player") && player.GetComponent<PlayerMovement>().exit && Input.GetButtonDown("Leave"))
         {
             player.GetComponent<PlayerMovement>().exit = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+
+
 }

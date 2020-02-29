@@ -8,7 +8,7 @@ public class ContinueDialog : MonoBehaviour
     {
         if (Input.GetButtonDown("Clear"))
         {
-            GetComponent<Dialog>().Clear();
+            GetComponent<Dialog>().Next();
         }
     }
 }

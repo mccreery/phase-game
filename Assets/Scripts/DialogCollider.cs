@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogCollider : MonoBehaviour
 {
     public GameObject player;
-    public string sentence;
+    public string[] sentence;
     private Dialog dialog;
 
     void Start()
@@ -15,7 +15,7 @@ public class DialogCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Player"))
+        if (coll.gameObject.CompareTag("Player") && dialog.valid)
         {
             dialog.Sentence(sentence);
         }
