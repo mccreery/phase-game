@@ -1631,6 +1631,11 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1222681689931373193, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3654184254542793624, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
         type: 3}
       propertyPath: m_Mesh
@@ -1758,6 +1763,31 @@ MonoBehaviour:
   resetPosition: {x: -11.5, y: 1.5}
   meter: {fileID: 404716975}
   camera: {fileID: 40684968}
+--- !u!1 &404716979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4668431453955951538, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
+    type: 3}
+  m_PrefabInstance: {fileID: 404716974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &404716980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404716979}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 768ec90455e4e8641a26fc16ecf6c75e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &404716983
 MonoBehaviour:
   m_ObjectHideFlags: 0
