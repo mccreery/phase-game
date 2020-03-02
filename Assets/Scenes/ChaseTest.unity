@@ -261,11 +261,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908844705468908919, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
         type: 3}
-      propertyPath: runAcceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908844705468908919, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
-        type: 3}
       propertyPath: jumpVelocityY
       value: 17.5
       objectReference: {fileID: 0}

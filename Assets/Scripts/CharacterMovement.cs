@@ -3,35 +3,38 @@
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 public abstract class CharacterMovement : MonoBehaviour
 {
+    private new Rigidbody2D rigidbody2D;
+    private new Collider2D collider2D;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     public float runAcceleration = 20.0f;
     public float runMaxVelocity = 7.0f;
 
     public float jumpVelocity = 17.5f;
     public Vector2 wallJumpVelocity = new Vector2(8.0f, 15.0f);
 
-    private new Rigidbody2D rigidbody2D;
-    private new Collider2D collider2D;
-    private Animator animator;
-
     protected WallFlags lastWallFlags;
     private bool jumpPending;
     private bool lastFacingLeft;
 
     protected abstract float InputX { get; }
-    protected abstract bool IsJumpRequested { get; }
+    protected abstract bool IsJumpRequested(bool held);
 
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        jumpPending = jumpPending || IsJumpRequested
+        jumpPending = jumpPending || IsJumpRequested(false)
             && lastWallFlags.Any(WallFlags.Floor | WallFlags.Horizontal);
     }
 
@@ -49,11 +52,13 @@ public abstract class CharacterMovement : MonoBehaviour
         }
 
         // Player still has to be pressing and touching a wall for the jump to succeed
-        if (jumpPending && IsJumpRequested)
+        if (jumpPending && IsJumpRequested(true))
         {
-            velocity.y = jumpVelocity;
-
-            if (!lastWallFlags.Any(WallFlags.Floor))
+            if (lastWallFlags.Any(WallFlags.Floor))
+            {
+                velocity.y = jumpVelocity;
+            }
+            else
             {
                 if (lastWallFlags.Any(WallFlags.LeftWall))
                 {
@@ -82,10 +87,10 @@ public abstract class CharacterMovement : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        animator.SetFloat(HorizontalSpeedKey, rigidbody2D.velocity.x);
+        animator.SetFloat(HorizontalSpeedKey, Mathf.Abs(rigidbody2D.velocity.x));
         animator.SetFloat(VerticalSpeedKey, rigidbody2D.velocity.y);
         animator.SetBool(GroundedKey, lastWallFlags.Any(WallFlags.Floor));
         animator.SetBool(TouchingWallKey, lastWallFlags.Any(WallFlags.Horizontal));
-        animator.SetBool(FacingLeftKey, lastFacingLeft);
+        spriteRenderer.flipX = lastFacingLeft;
     }
 }
