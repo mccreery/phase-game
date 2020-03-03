@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: -2237593904531371843
     second: BoxPressed
+  - first:
+      213: -1672251075536010309
+    second: BoxSelected
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -241,7 +244,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
@@ -249,6 +252,27 @@ TextureImporter:
       bones: []
       spriteID: db804d8f23872f0e0800000000000000
       internalID: -2237593904531371843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxSelected
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3496bb188fac8e0800000000000000
+      internalID: -1672251075536010309
       vertices: []
       indices: 
       edges: []

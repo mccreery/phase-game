@@ -39,7 +39,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: f8c4b317f78c5f74d832381acb65e9d9, type: 3}
     - {fileID: 2800000, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
     - {fileID: 2800000, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
-    totalSpriteSurfaceArea: 84034
+    totalSpriteSurfaceArea: 84546
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -76,7 +76,9 @@ SpriteAtlas:
   - {fileID: 4337684191699249041, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -488721925442295091, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -7573354855677281409, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -1672251075536010309, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -1557013538026691241, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -2237593904531371843, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: 8033092973025764044, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -7584956380549873370, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
   - {fileID: 5256710626384624713, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
@@ -125,7 +127,9 @@ SpriteAtlas:
   - Battery
   - BarEmpty
   - BarFull
+  - BoxSelected
   - Box
+  - BoxPressed
   - Heart_0
   - Player Jump
   - Player Wall
