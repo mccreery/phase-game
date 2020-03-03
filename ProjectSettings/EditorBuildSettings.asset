@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: f8519a270051e154c8064c87b3a2b91d
   - enabled: 1
+    path: Assets/Scenes/VolumeMenu.unity
+    guid: bec146ce435682e45a0962d446f4c71e
+  - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
     guid: 4af53f1c2a2786a46bda0184608de5a7
   - enabled: 1

@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b983cb3bab4372344adfa1a62cd6a5ee, type: 2}
+  slider: {fileID: 656693762}
   parameterName: MasterVolume
 --- !u!1 &732780234
 GameObject:
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b983cb3bab4372344adfa1a62cd6a5ee, type: 2}
+  slider: {fileID: 2081379262}
   parameterName: SFXVolume
 --- !u!114 &2081379262
 MonoBehaviour:
