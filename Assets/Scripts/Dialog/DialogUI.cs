@@ -5,18 +5,21 @@ using UnityEngine.UI;
 
 public class DialogUI : MonoBehaviour
 {
-    public Text textDisplay;
+    private Text textDisplay;
+    public GameObject box;
     private string[] sentences;
     private int index;
     public float typingSpeed;
     public bool valid;
-    private bool player;
+    public GameObject player;
 
     public string[] startSentences;
-
+    public bool[] ifPlayer;
+   
     void Start()
     {
-        Sentence(startSentences);
+        textDisplay = GetComponentInChildren<Text>();
+        Sentence(startSentences, ifPlayer);
     }
 
     void Update()
@@ -26,18 +29,22 @@ public class DialogUI : MonoBehaviour
 
     IEnumerator Type()
     {
+        textDisplay.color = ifPlayer[index] ? Color.white : Color.red;
         foreach(char letter in sentences[index].ToCharArray())
         {
-            textDisplay.color = player ? Color.white : Color.red;
             textDisplay.text += letter;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 
-    public void Sentence(string[] s) {
+    public void Sentence(string[] s, bool[] p) {
         sentences = s;
-        if (s.Length > 0)
+        ifPlayer = p;
+        if (sentences.Length > 0)
         {
+            box.SetActive(true);
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             StartCoroutine(Type());   
         }
     }
@@ -58,6 +65,9 @@ public class DialogUI : MonoBehaviour
                 {
                     textDisplay.text = "";
                     index = 0;
+                    box.SetActive(false);
+                    player.GetComponent<PlayerMovement>().enabled = true;
+                    player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 }
             }
         }
