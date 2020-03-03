@@ -41,6 +41,9 @@ TextureImporter:
   - first:
       213: -1557013538026691241
     second: Box
+  - first:
+      213: -2237593904531371843
+    second: BoxPressed
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -225,6 +228,27 @@ TextureImporter:
       bones: []
       spriteID: 755e173cf60646ae0800000000000000
       internalID: -1557013538026691241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxPressed
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db804d8f23872f0e0800000000000000
+      internalID: -2237593904531371843
       vertices: []
       indices: 
       edges: []
