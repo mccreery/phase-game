@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ContinueDialog : MonoBehaviour
-{ 
+public class ContinueDialogUI : MonoBehaviour
+{
     void Update()
     {
         if (Input.GetButtonDown("Clear"))
         {
-            GetComponent<Dialog>().Next();
+            GetComponent<DialogUI>().Next();
         }
     }
 }

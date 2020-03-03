@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class DialogCollider : MonoBehaviour
 {
-    public GameObject player;
     public string[] sentence;
-    private Dialog dialog;
-
-    void Start()
-    {
-        dialog = player.GetComponent<Dialog>();
-    }
+    public DialogUI dialog;
 
     void OnTriggerEnter2D(Collider2D coll)
     {

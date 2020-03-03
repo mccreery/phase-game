@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialog : MonoBehaviour
+public class DialogUI : MonoBehaviour
 {
-    private TextMeshPro textDisplay;
+    public TextMeshProUGUI textDisplay;
     private string[] sentences;
     private int index;
     public float typingSpeed;
     public bool valid;
 
     public string[] startSentences;
-   
+
     void Start()
     {
-        textDisplay = GetComponentInChildren<TextMeshPro>();
         Sentence(startSentences);
     }
 
@@ -34,29 +33,31 @@ public class Dialog : MonoBehaviour
     }
 
     public void Sentence(string[] s) {
+        sentences = s;
         if (s.Length > 0)
         {
-            sentences = s;
             StartCoroutine(Type());   
         }
     }
 
     public void Next()
     {
-        if (textDisplay.text == sentences[index])
+        if (sentences.Length > 0)
         {
-            if (index < sentences.Length - 1)
+            if (textDisplay.text == sentences[index])
             {
-                index++;
-                textDisplay.text = "";
-                StartCoroutine(Type());
-            }
-            else
-            {
-                textDisplay.text = "";
-                index = 0;
+                if (index < sentences.Length - 1)
+                {
+                    index++;
+                    textDisplay.text = "";
+                    StartCoroutine(Type());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    index = 0;
+                }
             }
         }
     }
-
 }

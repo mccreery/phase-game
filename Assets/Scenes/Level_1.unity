@@ -1730,10 +1730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a8fc99e72bb184b96124825ec92ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textDisplay: {fileID: 1434566028}
   typingSpeed: 0.02
   valid: 0
-  startSentences:
-  - Ok
+  startSentences: []
 --- !u!114 &404716984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9023,6 +9023,18 @@ Transform:
   m_Father: {fileID: 1997320062}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434566028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1222681689931373193, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
+    type: 3}
+  m_PrefabInstance: {fileID: 404716974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1484114524
 GameObject:
   m_ObjectHideFlags: 0
@@ -9053,11 +9065,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 404716977}
   sentence:
   - That's not a normal wall
   - Maybe I can use this device
   - Press I it says
+  dialog: {fileID: 404716983}
 --- !u!61 &1484114526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10717,10 +10729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 404716977}
   sentence:
   - Good thing the meter recharges
   - Some kind of battery would be helpful though
+  dialog: {fileID: 404716983}
 --- !u!61 &2138934597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10755,7 +10767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138934595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.1, y: 6.236327, z: 0}
+  m_LocalPosition: {x: 56.81, y: 6.236327, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
