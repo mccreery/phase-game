@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: 2614719038445677065
     second: Items_1
+  - first:
+      213: -1557013538026691241
+    second: Box
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -201,6 +204,27 @@ TextureImporter:
       bones: []
       spriteID: 6f34ee7d24a339d40800000000000000
       internalID: 5589875621261886454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755e173cf60646ae0800000000000000
+      internalID: -1557013538026691241
       vertices: []
       indices: 
       edges: []

@@ -35,14 +35,20 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 938bb4e76b7f05e49a272a3fae11a89d, type: 3}
     - {fileID: 2800000, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
     - {fileID: 2800000, guid: 294a336885761864c9b9fc37759238bb, type: 3}
-    totalSpriteSurfaceArea: 9472
+    - {fileID: 2800000, guid: b9932110fbf6a0e40b7c0af70c5b8bdd, type: 3}
+    - {fileID: 2800000, guid: f8c4b317f78c5f74d832381acb65e9d9, type: 3}
+    - {fileID: 2800000, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+    - {fileID: 2800000, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+    totalSpriteSurfaceArea: 84034
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 8033092973025764044, guid: b9932110fbf6a0e40b7c0af70c5b8bdd, type: 3}
   - {fileID: -8492748132288170016, guid: 42bd8ff1d2c3d534ba6051951713b350, type: 3}
   - {fileID: 1474501215911098100, guid: 42bd8ff1d2c3d534ba6051951713b350, type: 3}
   - {fileID: -2520703351516285304, guid: 42bd8ff1d2c3d534ba6051951713b350, type: 3}
   - {fileID: -6307776778334697632, guid: 42bd8ff1d2c3d534ba6051951713b350, type: 3}
+  - {fileID: 21300000, guid: f8c4b317f78c5f74d832381acb65e9d9, type: 3}
   - {fileID: -4807310461760660131, guid: 938bb4e76b7f05e49a272a3fae11a89d, type: 3}
   - {fileID: -3196045656646204169, guid: 938bb4e76b7f05e49a272a3fae11a89d, type: 3}
   - {fileID: 2977761442387407660, guid: 938bb4e76b7f05e49a272a3fae11a89d, type: 3}
@@ -70,17 +76,28 @@ SpriteAtlas:
   - {fileID: 4337684191699249041, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -488721925442295091, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -7573354855677281409, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -1557013538026691241, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: 8033092973025764044, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -7584956380549873370, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: 5256710626384624713, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: -2311659948842064771, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: -4709456396536258026, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: -1182821291677670348, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: -6287787046888575383, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: 7364682651488144517, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
+  - {fileID: 21300000, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
   - {fileID: 3499683669041570755, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -551082938411016477, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -4950680412457382125, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -2869115396899081085, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: 3230424311799132286, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   m_PackedSpriteNamesToIndex:
+  - key
   - Phase Wall_1
   - Phase Wall_0
   - Phase Wall_3
   - Phase Wall_2
+  - arrows
   - Decorations_10
   - Decorations_9
   - Decorations_8
@@ -108,7 +125,16 @@ SpriteAtlas:
   - Battery
   - BarEmpty
   - BarFull
+  - Box
   - Heart_0
+  - Player Jump
+  - Player Wall
+  - Player Stand
+  - Player Walk 3
+  - Player Walk 2
+  - Player Walk 1
+  - Player Walk 0
+  - Chaser
   - Doors_3
   - Doors_2
   - Doors_1
