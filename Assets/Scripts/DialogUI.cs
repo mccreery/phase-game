@@ -10,6 +10,7 @@ public class DialogUI : MonoBehaviour
     private int index;
     public float typingSpeed;
     public bool valid;
+    private bool player;
 
     public string[] startSentences;
 
@@ -27,6 +28,7 @@ public class DialogUI : MonoBehaviour
     {
         foreach(char letter in sentences[index].ToCharArray())
         {
+            textDisplay.color = player ? Color.white : Color.red;
             textDisplay.text += letter;
             yield return new WaitForSeconds(0.02f);
         }
