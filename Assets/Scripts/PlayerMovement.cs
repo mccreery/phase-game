@@ -8,4 +8,28 @@ public class PlayerMovement : CharacterMovement
     {
         return held ? Input.GetButton("Jump") : Input.GetButtonDown("Jump");
     }
+
+    private EnergyMeter meter;
+
+    public bool exit = false;
+
+    void Awake()
+    {
+        base.Awake();
+        meter = GetComponent<EnergyMeter>();
+    }
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.CompareTag("Battery"))
+        {
+            meter.Energy += 50;
+            Destroy(coll.gameObject);
+        }
+        else if (coll.gameObject.CompareTag("Key"))
+        {
+            exit = true;
+            Destroy(coll.gameObject);
+        }
+    }
 }

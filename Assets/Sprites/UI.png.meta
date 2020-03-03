@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: b9932110fbf6a0e40b7c0af70c5b8bdd
+guid: 294a336885761864c9b9fc37759238bb
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8033092973025764044
-    second: key
+    second: Heart_0
+  - first:
+      213: 4337684191699249041
+    second: Battery
+  - first:
+      213: 160392798892558373
+    second: Heart_0
+  - first:
+      213: 2614719038445677065
+    second: Battery
+  - first:
+      213: -488721925442295091
+    second: BarEmpty
+  - first:
+      213: -7573354855677281409
+    second: BarFull
+  - first:
+      213: -1369248715783372719
+    second: BarEmpty
+  - first:
+      213: 5589875621261886454
+    second: BarFull
+  - first:
+      213: 1801263428120863714
+    second: Items_4
+  - first:
+      213: -5971942374765049077
+    second: Items_5
+  - first:
+      213: 160392798892558373
+    second: Items_0
+  - first:
+      213: 2614719038445677065
+    second: Items_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -45,7 +78,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -89,22 +122,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: key
+      name: Heart_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 3
-        width: 6
-        height: 11
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc223e07f774b7f60800000000000000
-      internalID: 8033092973025764044
+      spriteID: 528858a9664d93200800000000000000
+      internalID: 160392798892558373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battery
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a6102bc19594420800000000000000
+      internalID: 2614719038445677065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarEmpty
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150829e2c837ffce0800000000000000
+      internalID: -1369248715783372719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarFull
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f34ee7d24a339d40800000000000000
+      internalID: 5589875621261886454
       vertices: []
       indices: 
       edges: []

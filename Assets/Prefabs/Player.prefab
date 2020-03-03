@@ -150,6 +150,7 @@ MonoBehaviour:
   runMaxVelocity: 7
   jumpVelocity: 17.5
   wallJumpVelocity: {x: 8, y: 15}
+  exit: 0
 --- !u!114 &283992146854900437
 MonoBehaviour:
   m_ObjectHideFlags: 0
