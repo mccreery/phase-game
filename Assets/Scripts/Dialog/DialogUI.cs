@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DialogUI : MonoBehaviour
 {
     private Text textDisplay;
-    public GameObject box;
     private string[] sentences;
     private int index;
     public float typingSpeed;
@@ -15,6 +14,9 @@ public class DialogUI : MonoBehaviour
 
     public string[] startSentences;
     public bool[] ifPlayer;
+
+    public CanvasGroup canvasGroup;
+    public GameObject prompt;
    
     void Start()
     {
@@ -29,12 +31,15 @@ public class DialogUI : MonoBehaviour
 
     IEnumerator Type()
     {
+        prompt.SetActive(false);
+
         textDisplay.color = ifPlayer[index] ? Color.white : Color.red;
         foreach(char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        prompt.SetActive(true);
     }
 
     public void Sentence(string[] s, bool[] p) {
@@ -42,7 +47,7 @@ public class DialogUI : MonoBehaviour
         ifPlayer = p;
         if (sentences.Length > 0)
         {
-            box.SetActive(true);
+            canvasGroup.SetVisible(true);
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             StartCoroutine(Type());   
@@ -65,7 +70,7 @@ public class DialogUI : MonoBehaviour
                 {
                     textDisplay.text = "";
                     index = 0;
-                    box.SetActive(false);
+                    canvasGroup.SetVisible(false);
                     player.GetComponent<PlayerMovement>().enabled = true;
                     player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 }
