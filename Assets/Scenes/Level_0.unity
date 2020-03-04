@@ -298,12 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - 'WARNING: Device has been taken.'
-  - Eliminate!
-  player: 0000
   dialog: {fileID: 237028057}
-  repeat: 0
+  sentences:
+  - text: SECURITY BREACH IN SECTOR B. DEVICE HAS BEEN STOLEN.
+    textColor: {r: 1, g: 0, b: 0, a: 1}
+  - text: DISPATCH GUARDS.
+    textColor: {r: 1, g: 0, b: 0, a: 1}
+  repeat: 1
 --- !u!1 &199220485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 610720599358812513, guid: ec102c0856ce440479069402d456a1eb,
@@ -322,10 +323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - Leave with <ENTER>
-  player: 01
   dialog: {fileID: 237028057}
+  sentences:
+  - text: Looks like the exit's this way.
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   repeat: 0
 --- !u!114 &237028057 stripped
 MonoBehaviour:
@@ -1734,10 +1735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - I can leave with this
-  player: 01
   dialog: {fileID: 237028057}
+  sentences:
+  - text: TARGET HAS OBTAINED ACCESS KEY. BE ON WATCH.
+    textColor: {r: 1, g: 0, b: 0, a: 1}
   repeat: 0
 --- !u!1001 &404716974
 PrefabInstance:
@@ -6609,11 +6610,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
-      propertyPath: startSentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
-        type: 3}
       propertyPath: player.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6624,19 +6620,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
+      propertyPath: sentences2.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
       propertyPath: textDisplay
       value: 
       objectReference: {fileID: 1028715498}
-    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
-        type: 3}
-      propertyPath: startSentences.Array.data[1]
-      value: I need the device
-      objectReference: {fileID: 0}
-    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
-        type: 3}
-      propertyPath: startSentences.Array.data[0]
-      value: I have to leave <ENTER>
-      objectReference: {fileID: 0}
     - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
       propertyPath: player.Array.data[0]
@@ -6660,6 +6656,56 @@ PrefabInstance:
     - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
       propertyPath: ifPlayer.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].text
+      value: I see the phase suit! Exactly what I'm looking for.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[1].textColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[1].textColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[1].textColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[1].text
+      value: Time to make a run for it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: startSentences.Array.data[1].textColor.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484925609015913508, guid: 80ac560cc1215df48afaaab9b6727b51,

@@ -8,7 +8,7 @@ public class ContinueDialogUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Clear"))
         {
-            GetComponent<DialogUI>().Next();
+            StartCoroutine(GetComponent<DialogUI>().Advance());
         }
     }
 }

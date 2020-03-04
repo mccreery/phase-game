@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,75 +7,86 @@ using UnityEngine.UI;
 public class DialogUI : MonoBehaviour
 {
     private Text textDisplay;
-    private string[] sentences;
-    private int index;
     public float typingSpeed;
-    public bool valid;
     public GameObject player;
 
-    public string[] startSentences;
-    public bool[] ifPlayer;
+    public DialogText[] startSentences;
+    private Queue<DialogText> sentenceQueue;
 
     public CanvasGroup canvasGroup;
     public GameObject prompt;
-   
+
+    public bool Open
+    {
+        get => canvasGroup.IsVisible();
+        set
+        {
+            canvasGroup.SetVisible(value);
+            player.GetComponent<PlayerMovement>().enabled = !value;
+
+            player.GetComponent<Rigidbody2D>().constraints = value
+                ? RigidbodyConstraints2D.FreezeAll
+                : RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
     void Start()
     {
         textDisplay = GetComponentInChildren<Text>();
-        Sentence(startSentences, ifPlayer);
+        sentenceQueue = new Queue<DialogText>(startSentences);
+        StartCoroutine(Advance());
     }
 
-    void Update()
+    private IEnumerator DisplayText(string text)
     {
-        valid = (textDisplay.text == "" && index == 0);
-    }
+        textDisplay.text = string.Empty;
 
-    IEnumerator Type()
-    {
-        prompt.SetActive(false);
-
-        textDisplay.color = ifPlayer[index] ? Color.white : Color.red;
-        foreach(char letter in sentences[index].ToCharArray())
+        foreach (char c in text)
         {
-            textDisplay.text += letter;
+            textDisplay.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
-        prompt.SetActive(true);
     }
 
-    public void Sentence(string[] s, bool[] p) {
-        sentences = s;
-        ifPlayer = p;
-        if (sentences.Length > 0)
-        {
-            canvasGroup.SetVisible(true);
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            StartCoroutine(Type());   
-        }
-    }
-
-    public void Next()
+    public IEnumerator Advance()
     {
-        if (sentences.Length > 0)
+        if (sentenceQueue.Count == 0)
         {
-            if (textDisplay.text == sentences[index])
-            {
-                if (index < sentences.Length - 1)
-                {
-                    index++;
-                    textDisplay.text = "";
-                    StartCoroutine(Type());
-                }
-                else
-                {
-                    textDisplay.text = "";
-                    index = 0;
-                    canvasGroup.SetVisible(false);
-                    player.GetComponent<PlayerMovement>().enabled = true;
-                    player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                }
-            }
+            Open = false;
+        }
+        else
+        {
+            DialogText next = sentenceQueue.Dequeue();
+            textDisplay.color = next.textColor;
+
+            prompt.SetActive(false);
+            yield return StartCoroutine(DisplayText(next.text));
+            prompt.SetActive(true);
         }
     }
+
+    public void Enqueue(DialogText dialogText)
+    {
+        sentenceQueue.Enqueue(dialogText);
+        if (!Open)
+        {
+            Open = true;
+            StartCoroutine(Advance());
+        }
+    }
+
+    public void Enqueue(IEnumerable<DialogText> dialogText)
+    {
+        foreach (DialogText text in dialogText)
+        {
+            Enqueue(text);
+        }
+    }
+}
+
+[Serializable]
+public struct DialogText
+{
+    public string text;
+    public Color textColor;
 }

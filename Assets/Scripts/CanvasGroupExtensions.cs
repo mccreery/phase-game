@@ -10,4 +10,9 @@ public static class CanvasGroupExtensions
         canvasGroup.blocksRaycasts = visible;
         canvasGroup.interactable = visible;
     }
+
+    public static bool IsVisible(this CanvasGroup canvasGroup)
+    {
+        return canvasGroup.alpha > 0;
+    }
 }
