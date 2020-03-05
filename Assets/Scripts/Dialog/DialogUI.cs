@@ -15,6 +15,7 @@ public class DialogUI : MonoBehaviour
 
     public CanvasGroup canvasGroup;
     public GameObject prompt;
+    public bool nextSentence;
 
     public bool Open
     {
@@ -29,13 +30,14 @@ public class DialogUI : MonoBehaviour
                 : RigidbodyConstraints2D.FreezeRotation;
         }
     }
-
+        
     void Start()
     {
         textDisplay = GetComponentInChildren<Text>();
         sentenceQueue = new Queue<DialogText>(startSentences);
         StartCoroutine(Advance());
     }
+
 
     private IEnumerator DisplayText(string text)
     {
@@ -55,12 +57,14 @@ public class DialogUI : MonoBehaviour
             Open = false;
         }
         else
-        {
+        {  
             DialogText next = sentenceQueue.Dequeue();
             textDisplay.color = next.textColor;
 
+            nextSentence = false;
             prompt.SetActive(false);
             yield return StartCoroutine(DisplayText(next.text));
+            nextSentence = true;
             prompt.SetActive(true);
         }
     }
