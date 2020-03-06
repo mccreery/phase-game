@@ -39,7 +39,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: f8c4b317f78c5f74d832381acb65e9d9, type: 3}
     - {fileID: 2800000, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
     - {fileID: 2800000, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
-    totalSpriteSurfaceArea: 84034
+    totalSpriteSurfaceArea: 22259
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -76,7 +76,9 @@ SpriteAtlas:
   - {fileID: 4337684191699249041, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -488721925442295091, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -7573354855677281409, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -1672251075536010309, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -1557013538026691241, guid: 294a336885761864c9b9fc37759238bb, type: 3}
+  - {fileID: -2237593904531371843, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: 8033092973025764044, guid: 294a336885761864c9b9fc37759238bb, type: 3}
   - {fileID: -7584956380549873370, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
   - {fileID: 5256710626384624713, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
@@ -85,7 +87,13 @@ SpriteAtlas:
   - {fileID: -1182821291677670348, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
   - {fileID: -6287787046888575383, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
   - {fileID: 7364682651488144517, guid: ccf4e219cb2dfb34e8391a7400d3e206, type: 3}
-  - {fileID: 21300000, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: 8800198643917244662, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: -8799098983977754173, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: -4873853729656577589, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: 1204566674124966409, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: -7822231473254092506, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: 4241264161219916676, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
+  - {fileID: -4935395572534037983, guid: 622758b9056411d43b7fcecfcb7decc5, type: 3}
   - {fileID: 3499683669041570755, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -551082938411016477, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
   - {fileID: -4950680412457382125, guid: f589b25d522682c4eaf73141d7307a8d, type: 3}
@@ -125,7 +133,9 @@ SpriteAtlas:
   - Battery
   - BarEmpty
   - BarFull
+  - Enter
   - Box
+  - BoxPressed
   - Heart_0
   - Player Jump
   - Player Wall
@@ -134,7 +144,13 @@ SpriteAtlas:
   - Player Walk 2
   - Player Walk 1
   - Player Walk 0
-  - Chaser
+  - Chaser Walk 2
+  - Chaser Walk 3
+  - Chaser Walk 0
+  - Chaser Walk 1
+  - Chaser Stand
+  - Chaser Jump
+  - Chaser Wall
   - Doors_3
   - Doors_2
   - Doors_1

@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: -2237593904531371843
     second: BoxPressed
+  - first:
+      213: -1672251075536010309
+    second: Enter
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -241,7 +244,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
@@ -249,6 +252,27 @@ TextureImporter:
       bones: []
       spriteID: db804d8f23872f0e0800000000000000
       internalID: -2237593904531371843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enter
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3496bb188fac8e0800000000000000
+      internalID: -1672251075536010309
       vertices: []
       indices: 
       edges: []
