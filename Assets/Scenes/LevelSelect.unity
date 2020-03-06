@@ -420,6 +420,12 @@ MonoBehaviour:
   eventSystem: {fileID: 802822520}
   buttonTemplate: {fileID: 3529407467246302462, guid: a29f263dd4aea8846841adfbe93f334c,
     type: 3}
-  scenes:
-  - {fileID: 102900000, guid: 8110db6cc66fd674a917bf88d3950665, type: 3}
-  - {fileID: 102900000, guid: d0a60e58c92f3cc479b734d249d0c89f, type: 3}
+  levels:
+  - scene:
+      sceneAsset: {fileID: 102900000, guid: 8110db6cc66fd674a917bf88d3950665, type: 3}
+      scenePath: Assets/Scenes/Level_0.unity
+    humanName: Level 0
+  - scene:
+      sceneAsset: {fileID: 102900000, guid: d0a60e58c92f3cc479b734d249d0c89f, type: 3}
+      scenePath: Assets/Scenes/Level_1.unity
+    humanName: Level 1
