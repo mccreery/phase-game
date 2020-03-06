@@ -24,7 +24,7 @@ public abstract class CharacterMovement : MonoBehaviour
     protected abstract float InputX { get; }
     protected abstract bool IsJumpRequested(bool held);
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();

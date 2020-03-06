@@ -13,7 +13,7 @@ public class PlayerMovement : CharacterMovement
 
     public bool exit = false;
 
-    void Awake()
+    protected override void Awake()
     {
         base.Awake();
         meter = GetComponent<EnergyMeter>();
@@ -29,6 +29,10 @@ public class PlayerMovement : CharacterMovement
         else if (coll.gameObject.CompareTag("Key"))
         {
             exit = true;
+            Destroy(coll.gameObject);
+        }
+        else if (coll.gameObject.CompareTag("Takeable"))
+        {
             Destroy(coll.gameObject);
         }
     }
