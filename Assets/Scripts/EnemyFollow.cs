@@ -46,12 +46,26 @@ public class EnemyFollow : MonoBehaviour
                     if (aiColl.either)
                     {
                         if (CheckPos(aiColl.horizontal.bias, true, aiColl.horizontal.right, aiColl.transform) || CheckPos(aiColl.vertical.bias, false, aiColl.vertical.above, aiColl.transform))
+                        {
                             ifJump = !aiColl.jump.noJump;
+                            if (aiColl.move.move)
+                            {
+                                ifMove = true;
+                                direction = aiColl.move.moveRight ? 1 : -1;
+                            }
+                        }
                     }
                     else 
                     {
                         if (CheckPos(aiColl.horizontal.bias, true, aiColl.horizontal.right, aiColl.transform) && CheckPos(aiColl.vertical.bias, false, aiColl.vertical.above, aiColl.transform))
+                        {
                             ifJump = !aiColl.jump.noJump;
+                            if (aiColl.move.move)
+                            {
+                                ifMove = true;
+                                direction = aiColl.move.moveRight ? 1 : -1;
+                            }
+                        }
                     }
                 }
                 else
@@ -59,12 +73,26 @@ public class EnemyFollow : MonoBehaviour
                     if (aiColl.horizontal.horiz)
                     {
                         if (CheckPos(aiColl.horizontal.bias, true, aiColl.horizontal.right, aiColl.transform))
+                        {
                             ifJump = !aiColl.jump.noJump;
+                            if (aiColl.move.move)
+                            {
+                                ifMove = true;
+                                direction = aiColl.move.moveRight ? 1 : -1;
+                            }
+                        }
                     }
                     else
                     {
                         if (CheckPos(aiColl.vertical.bias, false, aiColl.vertical.above, aiColl.transform))
+                        {
                             ifJump = !aiColl.jump.noJump;
+                            if (aiColl.move.move)
+                            {
+                                ifMove = true;
+                                direction = aiColl.move.moveRight ? 1 : -1;
+                            }
+                        }
                     }
                 }
             }
@@ -162,6 +190,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if (ifMove)
         {
+            Debug.Log("mov");
             ifMove = false;
             Move(direction);
         }
