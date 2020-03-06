@@ -19,7 +19,7 @@ public class LevelSelect : MonoBehaviour
     void Start()
     {
         Instance = this;
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(transform.root.gameObject);
         AddButtons();
     }
 
