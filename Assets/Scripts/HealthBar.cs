@@ -2,40 +2,29 @@
 
 public class HealthBar : MonoBehaviour
 {
-    public GameObject heartImage;
+    [SerializeField]
+    private HealthManager healthManager;
 
-    public int maxHealth;
-    private int health;
+    [SerializeField]
+    private GameObject heartImage;
 
-    public int Health
+    private void Awake()
     {
-        get => health;
-        set
-        {
-            health = value;
-
-            int i = 0;
-            foreach (Transform childTransform in transform)
-            {
-                GameObject child = childTransform.gameObject;
-                child.SetActive(i < health);
-                ++i;
-            }
-        }
-    }
-
-    public void Reset()
-    {
-        Health = maxHealth;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        for (int i = 0; i < maxHealth; i++)
+        for (int i = 0; i < healthManager.MaxHealth; i++)
         {
             Instantiate(heartImage, transform);
         }
-        Reset();
+        healthManager.HealthChanged.AddListener(SyncHearts);
+    }
+
+    private void SyncHearts()
+    {
+        int health = healthManager.Health;
+
+        // Enable only the hearts that are filled
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(i < health);
+        }
     }
 }

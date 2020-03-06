@@ -63,9 +63,9 @@ public class LevelSelect : MonoBehaviour
         LoadLevel(CurrentLevel + numLevels);
     }
 
-    public void ReloadLevel()
+    public static void ReloadLevel()
     {
-        SkipLevels(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().path);
     }
 }
 
