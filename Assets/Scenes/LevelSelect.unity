@@ -442,10 +442,14 @@ MonoBehaviour:
   - scene:
       sceneAsset: {fileID: 102900000, guid: 8110db6cc66fd674a917bf88d3950665, type: 3}
       scenePath: Assets/Scenes/Level_0.unity
-    humanName: Level 1
+    humanName: Level 0
   - scene:
       sceneAsset: {fileID: 102900000, guid: d0a60e58c92f3cc479b734d249d0c89f, type: 3}
       scenePath: Assets/Scenes/Level_1.unity
+    humanName: Level 1
+  - scene:
+      sceneAsset: {fileID: 102900000, guid: 91fba3df6d4d00941b5e6283235ba995, type: 3}
+      scenePath: Assets/Scenes/Level_2.unity
     humanName: Level 2
 --- !u!4 &1978912195
 Transform:
