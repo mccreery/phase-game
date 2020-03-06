@@ -497,6 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartImage: {fileID: 8373515879387999852, guid: bf5d533c295f85744b17ce477d2cfa7b,
     type: 3}
+  health: 3
   maxHealth: 3
 --- !u!114 &7593608792948721816
 MonoBehaviour:

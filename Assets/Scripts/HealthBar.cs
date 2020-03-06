@@ -2,10 +2,14 @@
 
 public class HealthBar : MonoBehaviour
 {
-    public GameObject heartImage;
+    [SerializeField]
+    private GameObject heartImage;
 
-    public int maxHealth;
-    private int health;
+    [SerializeField]
+    private int health = 3;
+
+    [SerializeField]
+    private int maxHealth = 3;
 
     public int Health
     {
@@ -13,29 +17,44 @@ public class HealthBar : MonoBehaviour
         set
         {
             health = value;
-
-            int i = 0;
-            foreach (Transform childTransform in transform)
-            {
-                GameObject child = childTransform.gameObject;
-                child.SetActive(i < health);
-                ++i;
-            }
+            SyncHearts();
         }
     }
 
-    public void Reset()
-    {
-        Health = maxHealth;
-    }
+    public int MaxHealth => maxHealth;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         for (int i = 0; i < maxHealth; i++)
         {
             Instantiate(heartImage, transform);
         }
-        Reset();
+    }
+
+    private void OnValidate()
+    {
+        SyncHearts();
+    }
+
+    /// <summary>
+    /// Called when the health value changes by any means.
+    /// The bar is updated visually and level reset conditions are checked.
+    /// </summary>
+    private void SyncHearts()
+    {
+        if (health <= 0)
+        {
+            LevelSelect.ReloadLevel();
+        }
+        else if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        // Enable only the hearts that are filled
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(i < health);
+        }
     }
 }
