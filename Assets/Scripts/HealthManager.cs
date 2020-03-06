@@ -74,7 +74,7 @@ public class HealthManager : MonoBehaviour
     private void SetInvul()
     {
         invulTime = Time.timeSinceLevelLoad + invulTimeOnHit;
-        if (Invulnerable && !blinking)
+        if (Invulnerable && !blinking && !gameObject.activeInHierarchy)
         {
             blinking = true;
             StartCoroutine(Blink());
