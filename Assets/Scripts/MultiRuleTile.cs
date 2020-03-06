@@ -6,14 +6,8 @@ using UnityEngine.Tilemaps;
 [Serializable]
 public class MultiRuleTile : RuleTile
 {
-    public List<TileBase> equivalentTiles = new List<TileBase>();
-    private ISet<TileBase> equivalentSet;
-
-    public override bool StartUp(Vector3Int location, ITilemap tilemap, GameObject instantiatedGameObject)
-    {
-        equivalentSet = new HashSet<TileBase>(equivalentTiles);
-        return base.StartUp(location, tilemap, instantiatedGameObject);
-    }
+    [SerializeField]
+    private List<TileBase> equivalentTiles = new List<TileBase>();
 
     public override bool RuleMatch(int neighbor, TileBase other)
     {
@@ -24,9 +18,9 @@ public class MultiRuleTile : RuleTile
         switch (neighbor)
         {
             case 1:
-                return other == this || equivalentSet.Contains(other);
+                return other == this || equivalentTiles.Contains(other);
             case 2:
-                return other != this && !equivalentSet.Contains(other);
+                return other != this && !equivalentTiles.Contains(other);
             default:
                 return true;
         }
