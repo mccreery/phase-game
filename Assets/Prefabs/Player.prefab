@@ -220,3 +220,5 @@ MonoBehaviour:
   invulTimeOnHit: 1
   spriteToBlink: {fileID: 6908844705468908913}
   blinkDelay: 0.05
+  splatEffect: {fileID: 5395206837355692004, guid: b3955d4afb6dfaf498a1ff4a220f82ef,
+    type: 3}

@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 7097034788087383570, guid: 9d1db8f2855aa2442a74c70187a68ec8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7097034788087383570, guid: 9d1db8f2855aa2442a74c70187a68ec8,
         type: 3}
@@ -170,6 +170,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1db8f2855aa2442a74c70187a68ec8, type: 3}
+--- !u!114 &112776437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2213868219201256970, guid: 80ac560cc1215df48afaaab9b6727b51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366917014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &199220485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 610720599358812513, guid: ec102c0856ce440479069402d456a1eb,
@@ -1569,7 +1581,7 @@ PrefabInstance:
         type: 3}
       propertyPath: energySlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 112776437}
     - target: {fileID: 283992146854900437, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
         type: 3}
       propertyPath: startEnergy
@@ -6780,7 +6792,7 @@ PrefabInstance:
     - target: {fileID: 4969331354200075350, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4969331354200075350, guid: 80ac560cc1215df48afaaab9b6727b51,
         type: 3}
@@ -6951,7 +6963,7 @@ Transform:
   - {fileID: 296258611}
   - {fileID: 919391939}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1997320063
 Grid:
@@ -7044,7 +7056,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &610720599229361252
 PrefabInstance:
