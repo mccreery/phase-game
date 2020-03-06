@@ -10,6 +10,7 @@ public class LevelSelect : MonoBehaviour
     public static LevelSelect Instance { get; private set; }
 
     public EventSystem eventSystem;
+    public Transform buttonParent;
     public GameObject buttonTemplate;
 
     [SerializeField]
@@ -27,7 +28,7 @@ public class LevelSelect : MonoBehaviour
     {
         foreach (NamedScene namedScene in levels)
         {
-            GameObject buttonObject = Instantiate(buttonTemplate, transform);
+            GameObject buttonObject = Instantiate(buttonTemplate, buttonParent);
             if (eventSystem.firstSelectedGameObject == null)
             {
                 eventSystem.firstSelectedGameObject = buttonObject;

@@ -412,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 3529407467246302462, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_Name
-      value: UIButton
+      value: BackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29f263dd4aea8846841adfbe93f334c, type: 3}
