@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1672251075536010309, guid: 294a336885761864c9b9fc37759238bb,
+  m_Sprite: {fileID: -2464956544842678596, guid: 294a336885761864c9b9fc37759238bb,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -875,12 +875,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typingSpeed: 0.02
-  valid: 0
   player: {fileID: 0}
   startSentences: []
-  ifPlayer: 
   canvasGroup: {fileID: 5582905763648223252}
   prompt: {fileID: 7449716740682237934}
+  nextSentence: 0
 --- !u!114 &7696284498463034790
 MonoBehaviour:
   m_ObjectHideFlags: 0
