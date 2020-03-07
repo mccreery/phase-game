@@ -1,0 +1,19 @@
+LEVEL 1
+Avatar:   I see the phase device just up ahead. Better move fast!
+          (get device)
+Intercom: SECURITY BREACH IN SECTOR B. DEVICE HAS BEEN STOLEN.
+          DISPATCH GUARDS.
+          (get key)
+I:        TARGET HAS ACQUIRED ACCESS KEY. BE ON LOOKOUT.
+          (see door)
+A:        Escape's this way!
+
+LEVEL 2
+          (get pickup)
+A:        These batteries fit right into the device.
+          (see phase wall)
+A:        The symbol on this wall... It matches the one on the device.
+A:        I should be able to use [Shift] to activate it.
+
+LEVEL 3
+Chaser:   Target acquired.
