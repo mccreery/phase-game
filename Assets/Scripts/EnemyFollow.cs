@@ -1,21 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
-public class EnemyFollow : MonoBehaviour
+public class EnemyFollow : CharacterMovement
 {
-    private new Rigidbody2D rigidbody2D;
-    private new Collider2D collider2D;
+    protected override bool IsJumpRequested(bool held)
+    {
+        return held ? Input.GetButton("Jump") : Input.GetButtonDown("Jump");
+    }
 
-    public float runAcceleration = 15.0f;
-    public float runMaxVelocity = 5.0f;
-
-    public float jumpVelocity = 17.5f;
-    public Vector2 wallJumpVelocity = new Vector2(8.0f, 15.0f);
-
-    private WallFlags lastWallFlags;
     private Vector2 velocity;
 
     public Transform target;
@@ -24,12 +15,6 @@ public class EnemyFollow : MonoBehaviour
     private bool ifMove = false;
     private bool ifWallJump = false;
     private int direction;
-
-    void Awake()
-    {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        collider2D = GetComponent<Collider2D>();
-    } 
 
     void OnTriggerStay2D(Collider2D coll)
     {
@@ -170,10 +155,10 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    protected override void FixedUpdate()
     {
-        lastWallFlags = WallTest.GetFlags(collider2D);
-        velocity = rigidbody2D.velocity;
+        lastWallFlags = WallTest.GetFlags(GetComponent<Collider2D>());
+        velocity = GetComponent<Rigidbody2D>().velocity;
         
         if (ifJump)
         {
@@ -189,7 +174,6 @@ public class EnemyFollow : MonoBehaviour
         }
         if (ifMove)
         {
-            Debug.Log("mov");
             ifMove = false;
             Move(direction);
         }
@@ -204,11 +188,13 @@ public class EnemyFollow : MonoBehaviour
         }
             
         velocity = lastWallFlags.Clamp(velocity);
-        rigidbody2D.velocity = velocity;
+        GetComponent<Rigidbody2D>().velocity = velocity;
+        UpdateAnimator();
     }
         
     private void Move(int dir)
     {
+        lastFacingLeft = dir == 1 ? false : true;
         velocity.x = Mathf.MoveTowards(velocity.x, runMaxVelocity * dir, runAcceleration * Time.deltaTime);
     }
 
@@ -235,7 +221,7 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    bool CheckPos(float bias, bool horiz, bool positive, Transform tr)
+    private bool CheckPos(float bias, bool horiz, bool positive, Transform tr)
     {
         if (horiz)
         {

@@ -19,9 +19,9 @@ public abstract class CharacterMovement : MonoBehaviour
 
     protected WallFlags lastWallFlags;
     private bool jumpPending;
-    private bool lastFacingLeft;
+    protected bool lastFacingLeft;
 
-    protected abstract float InputX { get; }
+    protected virtual float InputX { get; }
     protected abstract bool IsJumpRequested(bool held);
 
     protected virtual void Awake()
@@ -38,7 +38,7 @@ public abstract class CharacterMovement : MonoBehaviour
             && lastWallFlags.Any(WallFlags.Floor | WallFlags.Horizontal);
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         lastWallFlags = WallTest.GetFlags(collider2D);
         Vector2 velocity = rigidbody2D.velocity;
@@ -85,7 +85,7 @@ public abstract class CharacterMovement : MonoBehaviour
     public static readonly string TouchingWallKey = "TouchingWall";
     public static readonly string FacingLeftKey = "FacingLeft";
 
-    private void UpdateAnimator()
+    protected void UpdateAnimator()
     {
         animator.SetFloat(HorizontalSpeedKey, Mathf.Abs(rigidbody2D.velocity.x));
         animator.SetFloat(VerticalSpeedKey, rigidbody2D.velocity.y);
