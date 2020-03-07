@@ -1,35 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
-    public static LevelSelect Instance { get; private set; }
-
-    public EventSystem eventSystem;
     public Transform buttonParent;
     public GameObject buttonTemplate;
 
-    [SerializeField]
-    private List<NamedScene> levels = new List<NamedScene>();
-    public IReadOnlyCollection<NamedScene> Levels => levels.AsReadOnly();
+    [Header("Keyboard Navigation")]
+    public EventSystem eventSystem;
 
     void Start()
     {
-        Instance = this;
-        DontDestroyOnLoad(transform.root.gameObject);
-        AddButtons();
-    }
-
-    private void AddButtons()
-    {
-        foreach (NamedScene namedScene in levels)
+        foreach (NamedScene namedScene in LevelManager.Instance.Levels)
         {
             GameObject buttonObject = Instantiate(buttonTemplate, buttonParent);
-            if (eventSystem.firstSelectedGameObject == null)
+            if (eventSystem != null && eventSystem.firstSelectedGameObject == null)
             {
                 eventSystem.firstSelectedGameObject = buttonObject;
             }
@@ -43,35 +30,4 @@ public class LevelSelect : MonoBehaviour
             });
         }
     }
-
-    public int CurrentLevel
-    {
-        get
-        {
-            string currentPath = SceneManager.GetActiveScene().path;
-            return levels.FindIndex(namedScene => namedScene.scene.ScenePath == currentPath);
-        }
-    }
-
-    public void LoadLevel(int levelIndex)
-    {
-        SceneManager.LoadScene(levels[levelIndex].scene);
-    }
-
-    public void SkipLevels(int numLevels)
-    {
-        LoadLevel(CurrentLevel + numLevels);
-    }
-
-    public static void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().path);
-    }
-}
-
-[Serializable]
-public struct NamedScene
-{
-    public SceneReference scene;
-    public string humanName;
 }

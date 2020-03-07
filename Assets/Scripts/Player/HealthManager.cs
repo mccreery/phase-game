@@ -119,6 +119,6 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1;
 
-        LevelSelect.ReloadLevel();
+        LevelManager.Instance.ReloadLevel();
     }
 }
