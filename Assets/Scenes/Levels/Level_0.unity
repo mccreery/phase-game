@@ -29035,10 +29035,5 @@ PrefabInstance:
       propertyPath: startSentences.Array.data[0].textColor.a
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ebaebb978b3c044e9fea9ae572a0ff9, type: 3}
