@@ -283,7 +283,7 @@ MonoBehaviour:
   dialog: {fileID: 237028057}
   sentences:
   - text: TARGET HAS ACQUIRED ACCESS KEY. BE ON LOOKOUT.
-    textColor: {r: 1, g: 0, b: 0, a: 0}
+    textColor: {r: 1, g: 0, b: 0, a: 1}
   repeat: 0
 --- !u!1 &2125881171
 GameObject:
@@ -29033,6 +29033,11 @@ PrefabInstance:
     - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: startSentences.Array.data[0].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
