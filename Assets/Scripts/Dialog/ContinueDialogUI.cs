@@ -6,7 +6,7 @@ public class ContinueDialogUI : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetButtonDown("Clear") && GetComponent<DialogUI>().nextSentence)
+        if (Input.GetButtonDown("Interact") && GetComponent<DialogUI>().nextSentence)
         {
             StartCoroutine(GetComponent<DialogUI>().Advance());
         }

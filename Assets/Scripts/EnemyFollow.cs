@@ -24,7 +24,6 @@ public class EnemyFollow : MonoBehaviour
     private bool ifMove = false;
     private bool ifWallJump = false;
     private int direction;
-    private bool wallJumped = false;
 
     void Awake()
     {
@@ -227,13 +226,11 @@ public class EnemyFollow : MonoBehaviour
             {
                 velocity = wallJumpVelocity;
                 velocity.x = Mathf.Abs(velocity.x);
-                wallJumped = true;
             }
             else if (lastWallFlags.Any(WallFlags.RightWall))
             {
                 velocity = wallJumpVelocity;
                 velocity.x = -Mathf.Abs(velocity.x);
-                wallJumped = true;
             }
         }
     }
