@@ -287,6 +287,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2883486758124945585, guid: 8ad4698f6cf89f5418e4362eeed62857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245108863658312327, guid: 8ad4698f6cf89f5418e4362eeed62857,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4245108863658312327, guid: 8ad4698f6cf89f5418e4362eeed62857,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5096202363444822843, guid: 8ad4698f6cf89f5418e4362eeed62857,
         type: 3}
       propertyPath: m_IsActive
