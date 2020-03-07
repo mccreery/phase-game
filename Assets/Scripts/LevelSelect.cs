@@ -14,7 +14,7 @@ public class LevelSelect : MonoBehaviour
     public GameObject buttonTemplate;
 
     [SerializeField]
-    private List<NamedScene> levels;
+    private List<NamedScene> levels = new List<NamedScene>();
     public IReadOnlyCollection<NamedScene> Levels => levels.AsReadOnly();
 
     void Start()

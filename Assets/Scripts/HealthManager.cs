@@ -54,7 +54,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private float invulTimeOnHit = 1.0f;
     [SerializeField]
-    private SpriteRenderer spriteToBlink;
+    private SpriteRenderer spriteToBlink = default;
     [SerializeField]
     private float blinkDelay = 0.05f;
 
@@ -64,7 +64,7 @@ public class HealthManager : MonoBehaviour
     public bool Invulnerable => invulTime > Time.timeSinceLevelLoad;
 
     [SerializeField]
-    private GameObject splatEffect;
+    private GameObject splatEffect = default;
 
     private void Start()
     {

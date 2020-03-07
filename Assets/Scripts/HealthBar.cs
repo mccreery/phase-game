@@ -3,10 +3,10 @@
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]
-    private HealthManager healthManager;
+    private HealthManager healthManager = default;
 
     [SerializeField]
-    private GameObject heartImage;
+    private GameObject heartImage = default;
 
     private void Awake()
     {
