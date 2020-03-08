@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class EnergyMeter : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+
     public float maxEnergy = 500.0f;
     public float useRate = 200.0f;
     public float recoveryRate = 5.0f;
@@ -26,6 +29,7 @@ public class EnergyMeter : MonoBehaviour
     private void Start()
     {
         Energy = maxEnergy;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -33,10 +37,12 @@ public class EnergyMeter : MonoBehaviour
         if (Phasing)
         {
             Energy -= useRate * Time.deltaTime;
+            spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         } 
         else
         {
             Energy += recoveryRate * Time.deltaTime;
+            spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
         }
     }
 }
