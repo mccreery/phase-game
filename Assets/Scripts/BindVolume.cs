@@ -13,21 +13,17 @@ public class BindVolume : MonoBehaviour
         Slider slider = GetComponent<Slider>();
 
         audioMixer.GetFloat(parameterName, out float dB);
-        slider.value = DBToVolume(dB);
+        slider.value = ReLerp(-80, 0, slider.minValue, slider.maxValue, dB);
 
-        slider.onValueChanged.AddListener(value =>
+        slider.onValueChanged.AddListener(fac =>
         {
-            audioMixer.SetFloat(parameterName, VolumeToDB(value));
+            audioMixer.SetFloat(parameterName, ReLerp(slider.minValue, slider.maxValue, -80, 0, fac));
         });
     }
 
-    public static float VolumeToDB(float volume)
+    public static float ReLerp(float oldA, float oldB, float newA, float newB, float x)
     {
-        return Mathf.Max(-80.0f, 20.0f * Mathf.Log10(volume));
-    }
-
-    public static float DBToVolume(float dB)
-    {
-        return Mathf.Pow(10, dB / 20.0f);
+        float t = (x - oldA) / (oldB - oldA);
+        return Mathf.Lerp(newA, newB, t);
     }
 }
