@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Door : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class Door : MonoBehaviour
 
     public SpriteRenderer top, bottom;
     public Sprite topOpenSprite, bottomOpenSprite;
+
+    public AudioSource openSound;
 
     private bool touchingPlayer;
 
@@ -25,9 +28,20 @@ public class Door : MonoBehaviour
     {
         if (touchingPlayer && player.GetComponent<PlayerMovement>().exit && Input.GetButtonDown("Interact"))
         {
-            top.sprite = topOpenSprite;
-            bottom.sprite = bottomOpenSprite;
-            LevelManager.Instance.SkipLevels(1);
+            StartCoroutine(Open());
+            enabled = false;
         }
+    }
+
+    private IEnumerator Open()
+    {
+        // Play sound effect and open door
+        openSound.Play();
+        yield return new WaitForSecondsRealtime(openSound.clip.length / 2);
+        top.sprite = topOpenSprite;
+        bottom.sprite = bottomOpenSprite;
+        yield return new WaitForSecondsRealtime(openSound.clip.length / 2);
+
+        LevelManager.Instance.SkipLevels(1);
     }
 }
