@@ -417,6 +417,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: SFX Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 1878919251085728217, guid: 3efea2e3bf2df604bac4564eb190ac57,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878919251085728217, guid: 3efea2e3bf2df604bac4564eb190ac57,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 1878919251293376497, guid: 3efea2e3bf2df604bac4564eb190ac57,
         type: 3}
       propertyPath: m_Name
@@ -570,6 +580,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Music Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878919251085728217, guid: 3efea2e3bf2df604bac4564eb190ac57,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878919251085728217, guid: 3efea2e3bf2df604bac4564eb190ac57,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1878919251293376497, guid: 3efea2e3bf2df604bac4564eb190ac57,
         type: 3}
