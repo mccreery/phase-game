@@ -2,22 +2,23 @@
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class BindVolume : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Slider slider;
     public string parameterName;
 
-    private void Start()
+    private void Awake()
     {
-        float dB;
-        audioMixer.GetFloat(parameterName, out dB);
-        slider.value = DBToVolume(dB);
-    }
+        Slider slider = GetComponent<Slider>();
 
-    public void SetVolume(float value)
-    {
-        audioMixer.SetFloat(parameterName, VolumeToDB(value));
+        audioMixer.GetFloat(parameterName, out float dB);
+        slider.value = DBToVolume(dB);
+
+        slider.onValueChanged.AddListener(value =>
+        {
+            audioMixer.SetFloat(parameterName, VolumeToDB(value));
+        });
     }
 
     public static float VolumeToDB(float volume)
