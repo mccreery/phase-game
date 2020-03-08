@@ -18,8 +18,12 @@ public class HealthManager : MonoBehaviour
             CheckHealth();
             if (oldHealth != health)
             {
-                SetInvul();
                 healthChanged.Invoke();
+                if (oldHealth > health)
+                {
+                    SetInvul();
+                    Damaged.Invoke();
+                }
             }
         }
     }
@@ -31,6 +35,10 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private UnityEvent healthChanged = new UnityEvent();
     public UnityEvent HealthChanged => healthChanged;
+
+    [SerializeField]
+    private UnityEvent damaged = new UnityEvent();
+    public UnityEvent Damaged => damaged;
 
     private void OnValidate()
     {

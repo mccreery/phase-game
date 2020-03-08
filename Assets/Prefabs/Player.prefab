@@ -219,6 +219,9 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  damaged:
+    m_PersistentCalls:
+      m_Calls: []
   invulTimeOnHit: 1
   spriteToBlink: {fileID: 6908844705468908913}
   blinkDelay: 0.05
