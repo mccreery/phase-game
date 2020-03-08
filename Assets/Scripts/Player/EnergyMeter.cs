@@ -11,6 +11,7 @@ public class EnergyMeter : MonoBehaviour
     public float recoveryRate = 5.0f;
 
     public Slider energySlider;
+    public TargetVolume sfxVolumeController;
 
     private float energy;
     public float Energy
@@ -38,11 +39,13 @@ public class EnergyMeter : MonoBehaviour
         {
             Energy -= useRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            sfxVolumeController.targetVolume = 1.0f;
         } 
         else
         {
             Energy += recoveryRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
+            sfxVolumeController.targetVolume = 0.0f;
         }
     }
 }

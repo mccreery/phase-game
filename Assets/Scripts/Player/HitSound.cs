@@ -8,9 +8,11 @@ public class HitSound : MonoBehaviour
     [SerializeField]
     private AudioClip[] clips = default;
 
+    [SerializeField]
+    private AudioSource source;
+
     private void Awake()
     {
-        AudioSource source = GetComponent<AudioSource>();
         HealthManager healthManager = GetComponent<HealthManager>();
 
         healthManager.Damaged.AddListener(() =>
