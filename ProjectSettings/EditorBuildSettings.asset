@@ -18,12 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/VolumeMenu.unity
     guid: bec146ce435682e45a0962d446f4c71e
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_0.unity
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: ba59a54ef97a95d49bf9447e5371db86
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
     guid: 8110db6cc66fd674a917bf88d3950665
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1.unity
+    path: Assets/Scenes/Levels/Level 2.unity
     guid: d0a60e58c92f3cc479b734d249d0c89f
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_2.unity
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: 4acf64c67c6a2564db1b109f631ec5ab
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 4.unity
+    guid: c8777c8815e89684886447f26381680e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 5.unity
     guid: 91fba3df6d4d00941b5e6283235ba995
   m_configObjects: {}

@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     public SceneReference mainMenu;
     public SceneReference levelSelectMenu;
     public SceneReference volumeMenu;
+    public SceneReference credits;
 
     private void Awake()
     {
@@ -36,6 +37,11 @@ public class MenuManager : MonoBehaviour
     public void GoVolume()
     {
         SceneManager.LoadScene(Instance.volumeMenu);
+    }
+
+    public void GoCredits()
+    {
+        SceneManager.LoadScene(Instance.credits);
     }
 
     public void Quit()
