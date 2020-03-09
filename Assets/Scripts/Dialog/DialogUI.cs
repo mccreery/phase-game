@@ -34,8 +34,9 @@ public class DialogUI : MonoBehaviour
     void Start()
     {
         textDisplay = GetComponentInChildren<Text>();
-        sentenceQueue = new Queue<DialogText>(startSentences);
-        StartCoroutine(Advance());
+        sentenceQueue = new Queue<DialogText>();
+        Open = false;
+        Enqueue(startSentences);
     }
 
 
