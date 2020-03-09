@@ -801,7 +801,6 @@ GameObject:
   - component: {fileID: 190975699}
   - component: {fileID: 190975698}
   - component: {fileID: 190975697}
-  - component: {fileID: 190975696}
   - component: {fileID: 190975695}
   m_Layer: 0
   m_Name: PhaseTilemap
@@ -848,21 +847,6 @@ MonoBehaviour:
   m_PositionObjectValues: []
   m_PositionColorKeys: []
   m_PositionColorValues: []
---- !u!114 &190975696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190975693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c583647585e6e44cb11a451fb0268f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider2D: {fileID: 190975697}
-  energyMeter: {fileID: 674578637}
-  player: {fileID: 674578634}
 --- !u!19719996 &190975697
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -17406,24 +17390,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.34, y: 4.73}
   m_EdgeRadius: 0
---- !u!1 &674578634 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6973999224675723705, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1406355723}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &674578637 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4384618887069310488, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1406355723}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674578634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b405e7334380e540b6b227b53f0b9f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &745804493
 GameObject:
   m_ObjectHideFlags: 0
@@ -62292,6 +62258,11 @@ PrefabInstance:
       propertyPath: m_TileMatrixArray.Array.data[1].m_Data.e02
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 5982576004699228808, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: phaseWallCollider
+      value: 
+      objectReference: {fileID: 190975698}
     - target: {fileID: 6212402002716786174, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
@@ -62985,7 +62956,7 @@ PrefabInstance:
     - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6973999224675723709, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}

@@ -490,7 +490,6 @@ GameObject:
   - component: {fileID: 3252652632895736006}
   - component: {fileID: 6212402002716786174}
   - component: {fileID: 6753779987908818708}
-  - component: {fileID: 5706064219640046393}
   - component: {fileID: 3583792204098494799}
   m_Layer: 0
   m_Name: PhaseTilemap
@@ -659,21 +658,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &5706064219640046393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5189977308488712073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c583647585e6e44cb11a451fb0268f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider2D: {fileID: 6753779987908818708}
-  energyMeter: {fileID: 4384618887069310488}
-  player: {fileID: 6973999224675723705}
 --- !u!114 &3583792204098494799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,20 +1218,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7795691175505749573, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
+        type: 3}
+      propertyPath: phaseWallCollider
+      value: 
+      objectReference: {fileID: 6212402002716786174}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9714a2d8b46dc42968ec3c0b3e2609, type: 3}
---- !u!114 &4384618887069310488 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 283992146854900437, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,
-    type: 3}
-  m_PrefabInstance: {fileID: 4551374507099909325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973999224675723705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b405e7334380e540b6b227b53f0b9f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6172496738488550197 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7674318394638430200, guid: 1f9714a2d8b46dc42968ec3c0b3e2609,

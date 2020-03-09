@@ -1,19 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(EnergyMeter))]
+[RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(Collider2D))]
 public class ColliderPhaseable: MonoBehaviour
 {
-    public new Collider2D collider2D;
-    public EnergyMeter energyMeter;
-    public GameObject player;
+    [SerializeField]
+    private Collider2D phaseWallCollider = default;
 
-    // Update is called once per frame
-    void Update()
+    private EnergyMeter energyMeter;
+    private HealthManager healthManager;
+    private new Collider2D collider2D;
+
+    private void Awake()
     {
-        //collider2D.enabled = !energyMeter.Phasing;
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), energyMeter.Phasing);
+        energyMeter = GetComponent<EnergyMeter>();
+        healthManager = GetComponent<HealthManager>();
+        collider2D = GetComponent<Collider2D>();
     }
 
+    private void FixedUpdate()
+    {
+        Physics2D.IgnoreCollision(collider2D, phaseWallCollider, energyMeter.Phasing);
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider == phaseWallCollider && Mathf.Abs(Time.timeSinceLevelLoad - energyMeter.recentUnphase) < 0.1)
+        {
+            healthManager.Health = 0;
+        }
+    }
 }

@@ -33,9 +33,14 @@ public class EnergyMeter : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private bool phasingLast;
+    public float recentUnphase = -1;
+
     void Update()
     {
-        if (Phasing)
+        bool phasing = Phasing;
+
+        if (phasing)
         {
             Energy -= useRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
@@ -46,6 +51,12 @@ public class EnergyMeter : MonoBehaviour
             Energy += recoveryRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
             sfxVolumeController.targetVolume = 0.0f;
+
+            if (phasingLast)
+            {
+                recentUnphase = Time.timeSinceLevelLoad;
+            }
         }
+        phasingLast = phasing;
     }
 }

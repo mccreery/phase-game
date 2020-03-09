@@ -956,7 +956,6 @@ GameObject:
   - component: {fileID: 628938069}
   - component: {fileID: 628938068}
   - component: {fileID: 628938067}
-  - component: {fileID: 628938066}
   - component: {fileID: 628938065}
   m_Layer: 0
   m_Name: PhaseTilemap
@@ -1003,21 +1002,6 @@ MonoBehaviour:
   m_PositionObjectValues: []
   m_PositionColorKeys: []
   m_PositionColorValues: []
---- !u!114 &628938066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628938063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c583647585e6e44cb11a451fb0268f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider2D: {fileID: 628938067}
-  energyMeter: {fileID: 1256903842}
-  player: {fileID: 1256903831}
 --- !u!19719996 &628938067
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2883,6 +2867,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.12
       objectReference: {fileID: 0}
+    - target: {fileID: 5982576004699228808, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: phaseWallCollider
+      value: 
+      objectReference: {fileID: 628938068}
     - target: {fileID: 6725001751424866985, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: limits
@@ -3168,30 +3157,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38, y: 3.81}
   m_EdgeRadius: 0
---- !u!1 &1256903831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6973999224675723705, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
-    type: 3}
-  m_PrefabInstance: {fileID: 956519593}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1256903841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6973999224675723709, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
     type: 3}
   m_PrefabInstance: {fileID: 956519593}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1256903842 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4384618887069310488, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
-    type: 3}
-  m_PrefabInstance: {fileID: 956519593}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256903831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b405e7334380e540b6b227b53f0b9f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1274513510
 PrefabInstance:
   m_ObjectHideFlags: 0

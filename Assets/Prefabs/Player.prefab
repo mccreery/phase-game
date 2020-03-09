@@ -17,12 +17,12 @@ GameObject:
   - component: {fileID: 1661641368844954497}
   - component: {fileID: 5941870611874978339}
   - component: {fileID: 7674318394638430200}
-  - component: {fileID: 4686969425114063540}
   - component: {fileID: 2694976663149340594}
   - component: {fileID: 4816447644479990013}
   - component: {fileID: 2937358999942910323}
   - component: {fileID: 6294897100099682073}
   - component: {fileID: 3771380114002475953}
+  - component: {fileID: 7795691175505749573}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6908844705468908916}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -232,19 +232,6 @@ MonoBehaviour:
   blinkDelay: 0.05
   splatEffect: {fileID: 5395206837355692004, guid: b3955d4afb6dfaf498a1ff4a220f82ef,
     type: 3}
---- !u!114 &4686969425114063540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6908844705468908916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63eb015f57b58c24e90e525265a35d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  margin: 0.5
 --- !u!331 &2694976663149340594
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -520,3 +507,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7795691175505749573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908844705468908916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c583647585e6e44cb11a451fb0268f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseWallCollider: {fileID: 0}
