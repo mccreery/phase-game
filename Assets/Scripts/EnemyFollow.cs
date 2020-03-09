@@ -189,12 +189,12 @@ public class EnemyFollow : CharacterMovement
             
         velocity = lastWallFlags.Clamp(velocity);
         GetComponent<Rigidbody2D>().velocity = velocity;
+        lastFacingLeft = velocity.x > 0 ? false : true;
         UpdateAnimator();
     }
         
     private void Move(int dir)
     {
-        lastFacingLeft = dir == 1 ? false : true;
         velocity.x = Mathf.MoveTowards(velocity.x, runMaxVelocity * dir, runAcceleration * Time.deltaTime);
     }
 
