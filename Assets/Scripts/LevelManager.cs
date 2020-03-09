@@ -31,7 +31,14 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
-        SceneManager.LoadScene(Instance.levels[levelIndex].scene);
+        if (levelIndex < 0 || levelIndex >= Instance.levels.Count)
+        {
+            MenuManager.Instance.GoMainMenu();
+        }
+        else
+        {
+            SceneManager.LoadScene(Instance.levels[levelIndex].scene);
+        }
     }
 
     public void SkipLevels(int numLevels)
