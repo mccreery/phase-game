@@ -153,6 +153,9 @@ MonoBehaviour:
   volumeMenu:
     sceneAsset: {fileID: 0}
     scenePath: 
+  credits:
+    sceneAsset: {fileID: 0}
+    scenePath: 
 --- !u!1 &7658026152562024515
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,11 +602,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3529407467246302461, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3529407467246302461, guid: a29f263dd4aea8846841adfbe93f334c,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -651,16 +649,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3529407467246302461, guid: a29f263dd4aea8846841adfbe93f334c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3529407467246302461, guid: a29f263dd4aea8846841adfbe93f334c,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3529407467246302461, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
