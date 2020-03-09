@@ -57069,6 +57069,11 @@ PrefabInstance:
       propertyPath: m_CompositePaths.m_Paths.Array.data[5].Array.data[11].y
       value: 6.999996
       objectReference: {fileID: 0}
+    - target: {fileID: 4551374506785360998, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4551374506785361003, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60449,7 +60454,7 @@ PrefabInstance:
     - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6973999224675723709, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
