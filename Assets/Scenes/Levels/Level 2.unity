@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb560e59ce731d4c9838d8f5887441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 0}
+  dialog: {fileID: 445762208}
   sentences:
   - text: Good! The meter refilled a little
     textColor: {r: 1, g: 1, b: 1, a: 1}
@@ -37788,7 +37788,7 @@ PrefabInstance:
     - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6973999224675723709, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
