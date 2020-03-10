@@ -30,6 +30,12 @@ public class BindVolume : MonoBehaviour
         });
     }
 
+    private void OnDestroy()
+    {
+        audioMixer.GetFloat(parameterName, out float dB);
+        PlayerPrefs.SetFloat(parameterName, dB);
+    }
+
     public static float ReLerp(float oldA, float oldB, float newA, float newB, float x)
     {
         float t = (x - oldA) / (oldB - oldA);
