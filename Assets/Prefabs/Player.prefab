@@ -176,6 +176,7 @@ MonoBehaviour:
   recoveryRate: 5
   energySlider: {fileID: 0}
   sfxVolumeController: {fileID: 6294897100099682073}
+  recentUnphase: -1
 --- !u!95 &1661641368844954497
 Animator:
   serializedVersion: 3
@@ -232,6 +233,7 @@ MonoBehaviour:
   blinkDelay: 0.05
   splatEffect: {fileID: 5395206837355692004, guid: b3955d4afb6dfaf498a1ff4a220f82ef,
     type: 3}
+  humEffect: {fileID: 3771380114002475953}
 --- !u!331 &2694976663149340594
 SpriteMask:
   m_ObjectHideFlags: 0
