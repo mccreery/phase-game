@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private List<NamedScene> levels = new List<NamedScene>();
-    public IReadOnlyCollection<NamedScene> Levels => levels.AsReadOnly();
+    public ReadOnlyCollection<NamedScene> Levels => levels.AsReadOnly();
 
     void Start()
     {
