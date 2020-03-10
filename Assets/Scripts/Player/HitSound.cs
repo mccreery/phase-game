@@ -9,7 +9,7 @@ public class HitSound : MonoBehaviour
     private AudioClip[] clips = default;
 
     [SerializeField]
-    private AudioSource source;
+    private AudioSource source = default;
 
     private void Awake()
     {

@@ -9,14 +9,14 @@ public class ChaserStart : MonoBehaviour
 
     void Start()
     {
-        chaser.active = false;
+        chaser.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            chaser.active = true;
+            chaser.SetActive(true);
             Destroy(barrier);
         }
     }

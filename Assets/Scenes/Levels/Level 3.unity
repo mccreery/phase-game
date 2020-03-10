@@ -27839,7 +27839,6 @@ GameObject:
   - component: {fileID: 1897909455}
   - component: {fileID: 1897909454}
   - component: {fileID: 1897909453}
-  - component: {fileID: 1897909452}
   - component: {fileID: 1897909451}
   m_Layer: 0
   m_Name: PhaseTilemap
