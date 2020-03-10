@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
 	public Transform target;
 	public float dampTime = 0.25f;
 
+    public float margin = 1.0f;
+
     private Vector2 smoothPosition;
 
     private new Camera camera;
@@ -40,6 +42,7 @@ public class CameraFollow : MonoBehaviour
 
         Bounds bounds = limits.bounds;
         bounds.extents -= (Vector3)cameraExtents;
+        bounds.extents -= new Vector3(margin, margin);
 
         smoothPosition = new Vector2(
             Mathf.Clamp(smoothPosition.x, bounds.min.x, bounds.max.x),
