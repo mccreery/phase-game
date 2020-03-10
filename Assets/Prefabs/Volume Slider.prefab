@@ -174,7 +174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: dd88d00146a44e440ab11c7c653327c2, type: 3}
     m_FontSize: 6
     m_FontStyle: 0
     m_BestFit: 0
@@ -328,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b983cb3bab4372344adfa1a62cd6a5ee, type: 2}
   parameterName: 
+  lowDB: -50
 --- !u!1 &1878919251628823916
 GameObject:
   m_ObjectHideFlags: 0
