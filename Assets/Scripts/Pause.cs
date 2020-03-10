@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
@@ -14,6 +12,7 @@ public class Pause : MonoBehaviour
 
     private void OnDestroy()
     {
+        Time.timeScale = 1.0f;
         Cursor.visible = true;
     }
 
@@ -23,6 +22,7 @@ public class Pause : MonoBehaviour
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
             Cursor.visible = pauseMenu.activeSelf;
+            Time.timeScale = pauseMenu.activeSelf ? 0.0f : 1.0f;
         }
     }
 }
