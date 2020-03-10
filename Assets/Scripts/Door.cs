@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public Sprite topOpenSprite, bottomOpenSprite;
 
     public AudioSource openSound;
+    public AudioSource lockedSound;
 
     private bool touchingPlayer;
 
@@ -26,10 +27,17 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (touchingPlayer && player.GetComponent<PlayerMovement>().exit && Input.GetButtonDown("Interact"))
+        if (touchingPlayer && Input.GetButtonDown("Interact"))
         {
-            StartCoroutine(Open());
-            enabled = false;
+            if (player.GetComponent<PlayerMovement>().exit)
+            {
+                StartCoroutine(Open());
+                enabled = false;
+            }
+            else
+            {
+                lockedSound.Play();
+            }
         }
     }
 

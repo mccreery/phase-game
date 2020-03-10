@@ -211,15 +211,17 @@ MonoBehaviour:
     "5
     Bat Hits" by Slave2theLight (freesound.org, CC BY)
 
+    "Bad Beep (Incorrect)"
+    by RICHERlandTV (freesound.org, CC BY)
+
 
     Font
 
-    "PixelMix"
-    by Andrew Tyler (ajtyler.co, CC BY-SA)
+    "PixelMix" by Andrew Tyler
+    (ajtyler.co, CC BY-SA)
 
 
-    Some sounds modified for purpose,
-    e.g. looping'
+    Some sounds modified for purpose, e.g. looping'
 --- !u!222 &15011403
 CanvasRenderer:
   m_ObjectHideFlags: 0
