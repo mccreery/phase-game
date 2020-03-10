@@ -23,14 +23,14 @@ public class DialogUI : MonoBehaviour
         set
         {
             canvasGroup.SetVisible(value);
-            player.GetComponent<PlayerMovement>().enabled = !value;
+            //player.GetComponent<PlayerMovement>().enabled = !value;
 
-            player.GetComponent<Rigidbody2D>().constraints = value
+            /*player.GetComponent<Rigidbody2D>().constraints = value
                 ? RigidbodyConstraints2D.FreezeAll
-                : RigidbodyConstraints2D.FreezeRotation;
+                : RigidbodyConstraints2D.FreezeRotation;*/
         }
     }
-        
+
     void Start()
     {
         textDisplay = GetComponentInChildren<Text>();
@@ -39,14 +39,13 @@ public class DialogUI : MonoBehaviour
         Enqueue(startSentences);
     }
 
-
     private IEnumerator DisplayText(string text)
     {
         textDisplay.text = string.Empty;
 
-        foreach (char c in text)
+        for (int i = 0; i <= text.Length; i++)
         {
-            textDisplay.text += c;
+            textDisplay.text = text.Substring(0, i);
             yield return new WaitForSeconds(typingSpeed);
         }
     }
@@ -63,21 +62,17 @@ public class DialogUI : MonoBehaviour
             textDisplay.color = next.textColor;
 
             nextSentence = false;
-            prompt.SetActive(false);
+            //prompt.SetActive(false);
             yield return StartCoroutine(DisplayText(next.text));
             nextSentence = true;
-            prompt.SetActive(true);
+            //prompt.SetActive(true);
         }
     }
 
     public void Enqueue(DialogText dialogText)
     {
         sentenceQueue.Enqueue(dialogText);
-        if (!Open)
-        {
-            Open = true;
-            StartCoroutine(Advance());
-        }
+        Open = true;
     }
 
     public void Enqueue(IEnumerable<DialogText> dialogText)
@@ -86,6 +81,7 @@ public class DialogUI : MonoBehaviour
         {
             Enqueue(text);
         }
+        StartCoroutine(Advance());
     }
 }
 
