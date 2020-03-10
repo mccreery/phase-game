@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1.0f;
         Cursor.visible = false;
     }
 
