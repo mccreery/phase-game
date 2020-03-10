@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     public SceneReference levelSelectMenu;
     public SceneReference volumeMenu;
     public SceneReference credits;
+    public SceneReference endScreen;
 
     private void Awake()
     {
@@ -27,6 +28,11 @@ public class MenuManager : MonoBehaviour
     public void GoMainMenu()
     {
         SceneManager.LoadScene(Instance.mainMenu);
+    }
+
+    public void GoEnd()
+    {
+        SceneManager.LoadScene(Instance.endScreen);
     }
 
     public void GoLevelSelect()

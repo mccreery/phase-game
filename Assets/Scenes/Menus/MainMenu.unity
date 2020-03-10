@@ -564,6 +564,9 @@ MonoBehaviour:
   credits:
     sceneAsset: {fileID: 102900000, guid: ba59a54ef97a95d49bf9447e5371db86, type: 3}
     scenePath: Assets/Scenes/Menus/Credits.unity
+  endScreen:
+    sceneAsset: {fileID: 102900000, guid: ab0ea0d86c89a7846909ef48636b3c7d, type: 3}
+    scenePath: Assets/Scenes/You WIn.unity
 --- !u!4 &1208267640
 Transform:
   m_ObjectHideFlags: 0

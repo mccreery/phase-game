@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     {
         if (levelIndex < 0 || levelIndex >= Instance.levels.Count)
         {
-            MenuManager.Instance.GoMainMenu();
+            MenuManager.Instance.GoEnd();
         }
         else
         {
