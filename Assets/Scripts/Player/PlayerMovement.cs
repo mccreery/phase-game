@@ -12,11 +12,25 @@ public class PlayerMovement : CharacterMovement
     private EnergyMeter meter;
 
     public bool exit = false;
+    public float slideVelocity = -2.0f;
 
     protected override void Awake()
     {
         base.Awake();
         meter = GetComponent<EnergyMeter>();
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        if (lastWallFlags.Any(WallFlags.Horizontal) && !lastWallFlags.Any(WallFlags.Floor)
+            && rigidbody2D.velocity.y < slideVelocity)
+        {
+            Vector2 velocity = rigidbody2D.velocity;
+            velocity.y = slideVelocity;
+            rigidbody2D.velocity = velocity;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)

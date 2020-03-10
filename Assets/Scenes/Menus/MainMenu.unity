@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 1208267641}
   - component: {fileID: 1208267642}
   - component: {fileID: 1208267643}
+  - component: {fileID: 1208267644}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -563,6 +564,9 @@ MonoBehaviour:
   credits:
     sceneAsset: {fileID: 102900000, guid: ba59a54ef97a95d49bf9447e5371db86, type: 3}
     scenePath: Assets/Scenes/Menus/Credits.unity
+  endScreen:
+    sceneAsset: {fileID: 102900000, guid: ab0ea0d86c89a7846909ef48636b3c7d, type: 3}
+    scenePath: Assets/Scenes/You WIn.unity
 --- !u!4 &1208267640
 Transform:
   m_ObjectHideFlags: 0
@@ -593,23 +597,23 @@ MonoBehaviour:
   - scene:
       sceneAsset: {fileID: 102900000, guid: 8110db6cc66fd674a917bf88d3950665, type: 3}
       scenePath: Assets/Scenes/Levels/Level 1.unity
-    humanName: Level 1
+    humanName: 'Level 1: Heist'
   - scene:
       sceneAsset: {fileID: 102900000, guid: d0a60e58c92f3cc479b734d249d0c89f, type: 3}
       scenePath: Assets/Scenes/Levels/Level 2.unity
-    humanName: Level 2
+    humanName: 'Level 2: Phase'
   - scene:
       sceneAsset: {fileID: 102900000, guid: 4acf64c67c6a2564db1b109f631ec5ab, type: 3}
       scenePath: Assets/Scenes/Levels/Level 3.unity
-    humanName: Level 3
+    humanName: 'Level 3: Chase'
   - scene:
       sceneAsset: {fileID: 102900000, guid: c8777c8815e89684886447f26381680e, type: 3}
       scenePath: Assets/Scenes/Levels/Level 4.unity
-    humanName: Level 4
+    humanName: 'Level 4: Pursuit'
   - scene:
       sceneAsset: {fileID: 102900000, guid: 91fba3df6d4d00941b5e6283235ba995, type: 3}
       scenePath: Assets/Scenes/Levels/Level 5.unity
-    humanName: Level 5
+    humanName: 'Level 5: Gauntlet'
 --- !u!82 &1208267642
 AudioSource:
   m_ObjectHideFlags: 0
@@ -720,6 +724,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: e1f3d299c6805e2478f06330114f2a7c, type: 3}
+--- !u!114 &1208267644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208267638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed041dfa800fb349b698da4d45eee94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b983cb3bab4372344adfa1a62cd6a5ee, type: 2}
+  parameterNames:
+  - MasterVolume
+  - MusicVolume
+  - SFXVolume
 --- !u!1001 &1615866779
 PrefabInstance:
   m_ObjectHideFlags: 0

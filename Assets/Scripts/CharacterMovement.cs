@@ -6,7 +6,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class CharacterMovement : MonoBehaviour
 {
-    private new Rigidbody2D rigidbody2D;
+    protected new Rigidbody2D rigidbody2D;
     private new Collider2D collider2D;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -32,7 +32,7 @@ public abstract class CharacterMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    protected void Update()
     {
         jumpPending = jumpPending || IsJumpRequested(false)
             && lastWallFlags.Any(WallFlags.Floor | WallFlags.Horizontal);

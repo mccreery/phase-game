@@ -74,6 +74,9 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private GameObject splatEffect = default;
 
+    [SerializeField]
+    private AudioSource humEffect;
+
     private void Start()
     {
         SetInvul();
@@ -118,6 +121,7 @@ public class HealthManager : MonoBehaviour
         healthChanged.Invoke();
 
         spriteToBlink.enabled = false;
+        humEffect.volume = 0;
 
         // Can't instantiate from editor until end of frame
         yield return new WaitForEndOfFrame();
