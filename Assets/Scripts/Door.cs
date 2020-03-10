@@ -11,18 +11,39 @@ public class Door : MonoBehaviour
     public AudioSource openSound;
     public AudioSource lockedSound;
 
+    public GameObject keyPrompt;
+    public GameObject openPrompt;
+
     private bool touchingPlayer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Set player flag
         touchingPlayer = touchingPlayer || collision.gameObject.CompareTag("Player");
+
+        if (touchingPlayer)
+        {
+            if (player.GetComponent<PlayerMovement>().exit)
+            {
+                openPrompt.SetActive(true);
+            }
+            else
+            {
+                keyPrompt.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         // Clear player flag
         touchingPlayer = touchingPlayer && !collision.gameObject.CompareTag("Player");
+
+        if (!touchingPlayer)
+        {
+            keyPrompt.SetActive(false);
+            openPrompt.SetActive(false);
+        }
     }
 
     private void Update()
