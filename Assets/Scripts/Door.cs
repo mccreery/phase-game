@@ -64,12 +64,16 @@ public class Door : MonoBehaviour
 
     private IEnumerator Open()
     {
+        Time.timeScale = 0.0f;
+
         // Play sound effect and open door
         openSound.Play();
         yield return new WaitForSecondsRealtime(openSound.clip.length / 2);
         top.sprite = topOpenSprite;
         bottom.sprite = bottomOpenSprite;
         yield return new WaitForSecondsRealtime(openSound.clip.length / 2);
+
+        Time.timeScale = 1.0f;
 
         LevelManager.Instance.SkipLevels(1);
     }
