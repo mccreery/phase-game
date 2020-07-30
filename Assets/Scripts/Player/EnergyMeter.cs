@@ -11,6 +11,10 @@ public class EnergyMeter : MonoBehaviour
     public float recoveryRate = 5.0f;
 
     public Slider energySlider;
+    public float snapToMin;
+
+    private float SnapToMin => energySlider.wholeNumbers ? Mathf.Floor(snapToMin) + 0.5f : snapToMin;
+
     public TargetVolume sfxVolumeController;
 
     private float energy;
@@ -20,7 +24,14 @@ public class EnergyMeter : MonoBehaviour
         set
         {
             energy = Mathf.Clamp(value, 0, maxEnergy);
-            energySlider.value = energySlider.minValue + (energy / maxEnergy) * (energySlider.maxValue - energySlider.minValue);
+
+            float sliderValue = Mathf.Lerp(energySlider.minValue, energySlider.maxValue, Mathf.InverseLerp(0, maxEnergy, energy));
+            if (sliderValue < SnapToMin)
+            {
+                sliderValue = energySlider.minValue;
+            }
+
+            energySlider.value = sliderValue;
         }
     }
 
