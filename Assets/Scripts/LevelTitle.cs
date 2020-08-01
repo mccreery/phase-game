@@ -14,7 +14,8 @@ public class LevelTitle : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<Text>().text = levelList.Levels[levelList.CurrentIndex].humanName;
+        text = GetComponent<Text>();
+        text.text = levelList.Levels[levelList.CurrentIndex].humanName;
     }
 
     private void Update()
