@@ -152,7 +152,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1208267639}
+      objectReference: {fileID: 11400000, guid: 77cdb488b9a9b804d9f2569b34806d00,
+        type: 2}
     - target: {fileID: 3529407467246302460, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -476,7 +477,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 579925900}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -528,7 +529,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1208267640}
-  - component: {fileID: 1208267639}
   - component: {fileID: 1208267642}
   - component: {fileID: 1208267643}
   - component: {fileID: 1208267644}
@@ -540,33 +540,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1208267639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208267638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65462ab8e7a49e94ab32fb7c0cfefb77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu:
-    sceneAsset: {fileID: 102900000, guid: e92fbd6b2cf370d44b2facef6e43b2e6, type: 3}
-    scenePath: Assets/Scenes/Menus/MainMenu.unity
-  levelSelectMenu:
-    sceneAsset: {fileID: 102900000, guid: f8519a270051e154c8064c87b3a2b91d, type: 3}
-    scenePath: Assets/Scenes/Menus/LevelSelectMenu.unity
-  volumeMenu:
-    sceneAsset: {fileID: 102900000, guid: bec146ce435682e45a0962d446f4c71e, type: 3}
-    scenePath: Assets/Scenes/Menus/VolumeMenu.unity
-  credits:
-    sceneAsset: {fileID: 102900000, guid: ba59a54ef97a95d49bf9447e5371db86, type: 3}
-    scenePath: Assets/Scenes/Menus/Credits.unity
-  endScreen:
-    sceneAsset: {fileID: 102900000, guid: ab0ea0d86c89a7846909ef48636b3c7d, type: 3}
-    scenePath: Assets/Scenes/You WIn.unity
 --- !u!4 &1208267640
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +726,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1208267639}
+      objectReference: {fileID: 11400000, guid: 77cdb488b9a9b804d9f2569b34806d00,
+        type: 2}
     - target: {fileID: 3529407467246302460, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -897,7 +871,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1208267639}
+      objectReference: {fileID: 11400000, guid: 77cdb488b9a9b804d9f2569b34806d00,
+        type: 2}
     - target: {fileID: 3529407467246302460, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1046,7 +1021,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1208267639}
+      objectReference: {fileID: 11400000, guid: 77cdb488b9a9b804d9f2569b34806d00,
+        type: 2}
     - target: {fileID: 3529407467246302460, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1195,7 +1171,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1208267639}
+      objectReference: {fileID: 11400000, guid: 77cdb488b9a9b804d9f2569b34806d00,
+        type: 2}
     - target: {fileID: 3529407467246302460, guid: a29f263dd4aea8846841adfbe93f334c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
