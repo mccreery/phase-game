@@ -8,7 +8,7 @@ public class Reset : MonoBehaviour
     {
         if (Input.GetButtonDown("Reset"))
         {
-            LevelManager.Instance.ReloadLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().path);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -131,6 +132,6 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(3);
         Time.timeScale = 1;
 
-        LevelManager.Instance.ReloadLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().path);
     }
 }

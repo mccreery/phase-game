@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -62,6 +63,12 @@ public class Door : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private LevelList levelList;
+
+    [SerializeField]
+    private SceneReference endScene;
+
     private IEnumerator Open()
     {
         Time.timeScale = 0.0f;
@@ -75,6 +82,13 @@ public class Door : MonoBehaviour
 
         Time.timeScale = 1.0f;
 
-        LevelManager.Instance.SkipLevels(1);
+        if (levelList.CurrentIndex + 1 < levelList.Levels.Count)
+        {
+            SceneManager.LoadScene(levelList.Levels[levelList.CurrentIndex + 1].scene);
+        }
+        else
+        {
+            SceneManager.LoadScene(endScene);
+        }
     }
 }

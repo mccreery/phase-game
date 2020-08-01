@@ -11,9 +11,12 @@ public class LevelSelect : MonoBehaviour
     [Header("Keyboard Navigation")]
     public EventSystem eventSystem;
 
+    [SerializeField]
+    private LevelList levelList;
+
     void Start()
     {
-        foreach (NamedScene namedScene in LevelManager.Instance.Levels)
+        foreach (NamedScene namedScene in levelList.Levels)
         {
             GameObject buttonObject = Instantiate(buttonTemplate, buttonParent);
             if (eventSystem != null && eventSystem.firstSelectedGameObject == null)

@@ -9,13 +9,12 @@ public class LevelTitle : MonoBehaviour
     public float stayTime = 2.0f;
     public float fadeTime = 1.0f;
 
+    [SerializeField]
+    private LevelList levelList;
+
     private void Awake()
     {
-        int i = LevelManager.Instance.CurrentLevel;
-        NamedScene level = LevelManager.Instance.Levels[i];
-
-        text = GetComponent<Text>();
-        text.text = level.humanName;
+        GetComponent<Text>().text = levelList.Levels[levelList.CurrentIndex].humanName;
     }
 
     private void Update()

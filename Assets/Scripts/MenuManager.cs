@@ -20,9 +20,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private LevelList levelList;
+
     public void StartGame()
     {
-        LevelManager.Instance.LoadLevel(0);
+        SceneManager.LoadScene(levelList.Levels[0].scene);
     }
 
     public void GoMainMenu()

@@ -165,6 +165,10 @@ MonoBehaviour:
   lockedSound: {fileID: 2094298203063021456}
   keyPrompt: {fileID: 7214098283172365950}
   openPrompt: {fileID: 1305668648256261739}
+  levelList: {fileID: 11400000, guid: e7037cd6e71ae5843845705cd057ebd3, type: 2}
+  endScene:
+    sceneAsset: {fileID: 102900000, guid: ab0ea0d86c89a7846909ef48636b3c7d, type: 3}
+    scenePath: Assets/Scenes/You WIn.unity
 --- !u!82 &230589990831529138
 AudioSource:
   m_ObjectHideFlags: 0
