@@ -22,7 +22,14 @@ public class EnergyMeter : MonoBehaviour
         set
         {
             energy = Mathf.Clamp(value, 0, maxEnergy);
+            UpdateSlider();
+        }
+    }
 
+    private void UpdateSlider()
+    {
+        if (energySlider != null)
+        {
             float t = Mathf.InverseLerp(0, maxEnergy, energy);
             float skippedMin = energySlider.minValue + sliderSkip;
 
