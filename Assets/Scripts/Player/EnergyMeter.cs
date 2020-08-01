@@ -42,27 +42,17 @@ public class EnergyMeter : MonoBehaviour
         }
     }
 
-    public SharedBool hasDevice;
-
-    public bool CanPhase => energy > 0 && hasDevice && Cooldown == 0;
-    public bool Phasing => CanPhase && Input.GetButton("Phase");
-
     private void Start()
     {
         Energy = maxEnergy;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private bool phasingLast;
-
-    private float cooldownTime;
-    public float Cooldown => Mathf.Max(0, cooldownTime - Time.time);
-
     void Update()
     {
-        bool phasing = Phasing;
+        UpdatePhasing();
 
-        if (phasing)
+        if (Phasing)
         {
             Energy -= useRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
@@ -73,12 +63,38 @@ public class EnergyMeter : MonoBehaviour
             Energy += recoveryRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
             sfxVolumeController.targetVolume = 0.0f;
+        }
+    }
 
-            if (phasingLast)
+    public SharedBool hasDevice;
+
+    public bool Phasing { get; private set; }
+    private void UpdatePhasing()
+    {
+        bool button = Input.GetButton("Phase");
+        if (Phasing)
+        {
+            if (Energy == 0)
             {
-                cooldownTime = Time.time + 0.1f;
+                Phasing = false;
+                Cooldown = 2.0f;
+            }
+            else if (!button)
+            {
+                Phasing = false;
+                Cooldown = 0.1f;
             }
         }
-        phasingLast = phasing;
+        else if (Energy > 0 && Cooldown == 0 && hasDevice && button)
+        {
+            Phasing = true;
+        }
+    }
+
+    private float cooldownTime;
+    public float Cooldown
+    {
+        get => Mathf.Max(0, cooldownTime - Time.time);
+        private set => cooldownTime = Time.time + value;
     }
 }
