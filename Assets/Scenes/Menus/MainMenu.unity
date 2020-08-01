@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 1208267642}
   - component: {fileID: 1208267643}
   - component: {fileID: 1208267644}
+  - component: {fileID: 1208267645}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -741,6 +742,20 @@ MonoBehaviour:
   - MasterVolume
   - MusicVolume
   - SFXVolume
+--- !u!114 &1208267645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208267638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4185e56e8707d1340b7cd0857a00ff2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filterType: 1
+  filterList: []
 --- !u!1001 &1615866779
 PrefabInstance:
   m_ObjectHideFlags: 0
