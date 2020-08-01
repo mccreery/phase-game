@@ -29,6 +29,3 @@ public class Shared<T> : Shared
         value = resetValue;
     }
 }
-
-[CreateAssetMenu]
-public class SharedBool : Shared<bool> { }
