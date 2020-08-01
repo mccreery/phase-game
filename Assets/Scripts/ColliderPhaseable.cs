@@ -26,7 +26,7 @@ public class ColliderPhaseable: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider == phaseWallCollider && Mathf.Abs(Time.timeSinceLevelLoad - energyMeter.recentUnphase) < 0.1)
+        if (collision.collider == phaseWallCollider && energyMeter.Cooldown > 0)
         {
             healthManager.Health = 0;
         }

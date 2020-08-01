@@ -44,7 +44,7 @@ public class EnergyMeter : MonoBehaviour
 
     public SharedBool hasDevice;
 
-    public bool CanPhase => energy > 0 && hasDevice;
+    public bool CanPhase => energy > 0 && hasDevice && Cooldown == 0;
     public bool Phasing => CanPhase && Input.GetButton("Phase");
 
     private void Start()
@@ -54,7 +54,9 @@ public class EnergyMeter : MonoBehaviour
     }
 
     private bool phasingLast;
-    public float recentUnphase = -1;
+
+    private float cooldownTime;
+    public float Cooldown => Mathf.Max(0, cooldownTime - Time.time);
 
     void Update()
     {
@@ -65,7 +67,7 @@ public class EnergyMeter : MonoBehaviour
             Energy -= useRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
             sfxVolumeController.targetVolume = 1.0f;
-        } 
+        }
         else
         {
             Energy += recoveryRate * Time.deltaTime;
@@ -74,7 +76,7 @@ public class EnergyMeter : MonoBehaviour
 
             if (phasingLast)
             {
-                recentUnphase = Time.timeSinceLevelLoad;
+                cooldownTime = Time.time + 0.1f;
             }
         }
         phasingLast = phasing;
