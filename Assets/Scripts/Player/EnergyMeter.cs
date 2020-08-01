@@ -24,7 +24,9 @@ public class EnergyMeter : MonoBehaviour
         }
     }
 
-    public bool CanPhase => energy > 0;
+    public SharedBool hasDevice;
+
+    public bool CanPhase => energy > 0 && hasDevice;
     public bool Phasing => CanPhase && Input.GetButton("Phase");
 
     private void Start()

@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 135744591}
   - component: {fileID: 135744590}
   - component: {fileID: 135744593}
+  - component: {fileID: 135744594}
   m_Layer: 0
   m_Name: Device
   m_TagString: Takeable
@@ -325,6 +326,19 @@ MonoBehaviour:
   - text: SECURITY BREACH IN SECTOR B. DEVICE HAS BEEN STOLEN. DISPATCH GUARDS.
     textColor: {r: 1, g: 0, b: 0, a: 1}
   repeat: 1
+--- !u!114 &135744594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135744589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3dfb22d7bc0e4438cee622e147c4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDevice: {fileID: 11400000, guid: 6b7a3724417994d47be9b3a67d7336a9, type: 2}
 --- !u!114 &237028057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
