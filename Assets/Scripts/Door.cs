@@ -64,10 +64,10 @@ public class Door : MonoBehaviour
     }
 
     [SerializeField]
-    private LevelList levelList;
+    private LevelList levelList = default;
 
     [SerializeField]
-    private SceneReference endScene;
+    private SceneReference endScene = default;
 
     private IEnumerator Open()
     {

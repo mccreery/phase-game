@@ -3,7 +3,7 @@
 public class Device : MonoBehaviour
 {
     [SerializeField]
-    private SharedBool hasDevice;
+    private SharedBool hasDevice = default;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

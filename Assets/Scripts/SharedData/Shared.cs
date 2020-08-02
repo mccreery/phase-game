@@ -22,7 +22,7 @@ public class Shared<T> : Shared
     }
 
     [SerializeField]
-    private T resetValue;
+    private T resetValue = default;
 
     public override void Reset()
     {

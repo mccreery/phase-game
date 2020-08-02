@@ -76,7 +76,7 @@ public class HealthManager : MonoBehaviour
     private GameObject splatEffect = default;
 
     [SerializeField]
-    private AudioSource humEffect;
+    private AudioSource humEffect = default;
 
     private void Start()
     {

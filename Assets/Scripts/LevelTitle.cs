@@ -10,7 +10,7 @@ public class LevelTitle : MonoBehaviour
     public float fadeTime = 1.0f;
 
     [SerializeField]
-    private LevelList levelList;
+    private LevelList levelList = default;
 
     private void Awake()
     {

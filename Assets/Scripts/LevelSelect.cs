@@ -12,7 +12,7 @@ public class LevelSelect : MonoBehaviour
     public EventSystem eventSystem;
 
     [SerializeField]
-    private LevelList levelList;
+    private LevelList levelList = default;
 
     void Start()
     {

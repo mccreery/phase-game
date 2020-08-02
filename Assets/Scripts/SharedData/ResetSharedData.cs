@@ -14,7 +14,7 @@ public class ResetSharedData : MonoBehaviour
     }
 
     [SerializeField]
-    private Shared[] filterList;
+    private Shared[] filterList = default;
 
     private void Start()
     {

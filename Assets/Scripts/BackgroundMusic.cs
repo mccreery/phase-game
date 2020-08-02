@@ -4,10 +4,10 @@ using UnityEngine.Audio;
 public class BackgroundMusic : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip music;
+    private AudioClip music = default;
 
     [SerializeField]
-    private AudioMixerGroup output;
+    private AudioMixerGroup output = default;
 
     private void Start()
     {
