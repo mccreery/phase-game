@@ -27,3 +27,4 @@ MonoBehaviour:
   endScreen:
     sceneAsset: {fileID: 102900000, guid: ab0ea0d86c89a7846909ef48636b3c7d, type: 3}
     scenePath: Assets/Scenes/You WIn.unity
+  levelList: {fileID: 11400000, guid: e7037cd6e71ae5843845705cd057ebd3, type: 2}

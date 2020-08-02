@@ -10,7 +10,7 @@ public class Menus : ScriptableObject
     public SceneReference credits;
     public SceneReference endScreen;
 
-    private LevelList levelList;
+    public LevelList levelList;
 
     public void LoadScene(SceneReference scene) => SceneManager.LoadScene(scene);
 
