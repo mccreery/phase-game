@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4551374505240857755}
   - component: {fileID: 986859005572066722}
-  - component: {fileID: 5754608455777654720}
+  - component: {fileID: 122064974025051995}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2697232129859903947}
---- !u!114 &5754608455777654720
+--- !u!114 &122064974025051995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,10 +174,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4551374505240857748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49d92a0c4c2bc5428bf6383c5ca5a7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c16591ae9e5d654bb50a860bb674b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: eb85c6732d79cb548ab3eadf61ccbf9e, type: 3}
+  output: {fileID: -5230625029908910144, guid: b983cb3bab4372344adfa1a62cd6a5ee, type: 2}
 --- !u!1 &4551374506331398110
 GameObject:
   m_ObjectHideFlags: 0
