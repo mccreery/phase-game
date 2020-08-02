@@ -11,6 +11,8 @@ public class EnergyMeter : MonoBehaviour
     public float recoveryRate = 5.0f;
 
     public Slider energySlider;
+    public float sliderSkip = 1.0f;
+
     public TargetVolume sfxVolumeController;
 
     private float energy;
@@ -20,14 +22,25 @@ public class EnergyMeter : MonoBehaviour
         set
         {
             energy = Mathf.Clamp(value, 0, maxEnergy);
-            energySlider.value = energySlider.minValue + (energy / maxEnergy) * (energySlider.maxValue - energySlider.minValue);
+            UpdateSlider();
         }
     }
 
-    public SharedBool hasDevice;
+    private void UpdateSlider()
+    {
+        if (energySlider != null)
+        {
+            float t = Mathf.InverseLerp(0, maxEnergy, energy);
+            float skippedMin = energySlider.minValue + sliderSkip;
 
-    public bool CanPhase => energy > 0 && hasDevice;
-    public bool Phasing => CanPhase && Input.GetButton("Phase");
+            energySlider.value = Mathf.Lerp(skippedMin, energySlider.maxValue, t);
+
+            if (Mathf.Approximately(energySlider.value, skippedMin))
+            {
+                energySlider.value = energySlider.minValue;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -35,30 +48,53 @@ public class EnergyMeter : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private bool phasingLast;
-    public float recentUnphase = -1;
-
     void Update()
     {
-        bool phasing = Phasing;
+        UpdatePhasing();
 
-        if (phasing)
+        if (Phasing)
         {
             Energy -= useRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
             sfxVolumeController.targetVolume = 1.0f;
-        } 
+        }
         else
         {
             Energy += recoveryRate * Time.deltaTime;
             spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
             sfxVolumeController.targetVolume = 0.0f;
+        }
+    }
 
-            if (phasingLast)
+    public SharedBool hasDevice;
+
+    public bool Phasing { get; private set; }
+    private void UpdatePhasing()
+    {
+        bool button = Input.GetButton("Phase");
+        if (Phasing)
+        {
+            if (Energy == 0)
             {
-                recentUnphase = Time.timeSinceLevelLoad;
+                Phasing = false;
+                Cooldown = 2.0f;
+            }
+            else if (!button)
+            {
+                Phasing = false;
+                Cooldown = 0.1f;
             }
         }
-        phasingLast = phasing;
+        else if (Energy > 0 && Cooldown == 0 && hasDevice && button)
+        {
+            Phasing = true;
+        }
+    }
+
+    private float cooldownTime;
+    public float Cooldown
+    {
+        get => Mathf.Max(0, cooldownTime - Time.time);
+        private set => cooldownTime = Time.time + value;
     }
 }
