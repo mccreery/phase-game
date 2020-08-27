@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 445762208}
   sentences: []
-  repeat: 1
+  repeat: 0
 --- !u!61 &477008763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   sentences:
   - text: I can also jump off walls.
     textColor: {r: 1, g: 1, b: 1, a: 1}
-  repeat: 1
+  repeat: 0
 --- !u!61 &739446230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   sentences:
   - text: The device lets me phase through walls using LEFT SHIFT or RIGHT CTRL.
     textColor: {r: 1, g: 1, b: 1, a: 1}
-  repeat: 1
+  repeat: 0
 --- !u!61 &895810579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 445762208}
   sentences: []
-  repeat: 1
+  repeat: 0
 --- !u!61 &954563170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   sentences:
   - text: I can use SPACE to jump.
     textColor: {r: 1, g: 1, b: 1, a: 1}
-  repeat: 1
+  repeat: 0
 --- !u!61 &1347062355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   sentences:
   - text: If I'm not careful I could end up suffocating in a wall.
     textColor: {r: 1, g: 1, b: 1, a: 1}
-  repeat: 1
+  repeat: 0
 --- !u!61 &1603494076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6628,6 +6628,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[24].second.m_TileIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970007588807351483, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970007588807351483, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970007588807351483, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162234523935547589, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162234523935547589, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235239942583123570, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235239942583123570, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235239942583123570, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235239942583123570, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3932074891046214925, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
