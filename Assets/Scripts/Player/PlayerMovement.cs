@@ -2,16 +2,20 @@
 
 public class PlayerMovement : CharacterMovement
 {
+    public Door door;
+
     protected override float InputX => Input.GetAxisRaw("Horizontal");
 
     protected override bool IsJumpRequested(bool held)
     {
-        return held ? Input.GetButton("Jump") : Input.GetButtonDown("Jump");
+        return !door.TouchingPlayer && (held ? Input.GetButton("Jump") : Input.GetButtonDown("Jump"));
     }
 
     private EnergyMeter meter;
 
-    public bool exit = false;
+    private bool hasKey = false;
+    public bool HasKey => hasKey;
+
     public float slideVelocity = -2.0f;
 
     protected override void Awake()
@@ -42,7 +46,7 @@ public class PlayerMovement : CharacterMovement
         }
         else if (coll.gameObject.CompareTag("Key"))
         {
-            exit = true;
+            hasKey = true;
             Destroy(coll.gameObject);
         }
         else if (coll.gameObject.CompareTag("Takeable"))

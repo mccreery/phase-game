@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
     public GameObject openPrompt;
 
     private bool touchingPlayer;
+    public bool TouchingPlayer => touchingPlayer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,7 +25,7 @@ public class Door : MonoBehaviour
 
         if (touchingPlayer)
         {
-            if (player.GetComponent<PlayerMovement>().exit)
+            if (player.GetComponent<PlayerMovement>().HasKey)
             {
                 openPrompt.SetActive(true);
             }
@@ -51,7 +52,7 @@ public class Door : MonoBehaviour
     {
         if (touchingPlayer && Input.GetButtonDown("Interact"))
         {
-            if (player.GetComponent<PlayerMovement>().exit)
+            if (player.GetComponent<PlayerMovement>().HasKey)
             {
                 StartCoroutine(Open());
                 enabled = false;
