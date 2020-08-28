@@ -325,6 +325,7 @@ MonoBehaviour:
   sentences:
   - text: SECURITY BREACH IN SECTOR B. DEVICE HAS BEEN STOLEN. DISPATCH GUARDS.
     textColor: {r: 1, g: 0, b: 0, a: 1}
+    enemy: 1
   repeat: 1
 --- !u!114 &135744594
 MonoBehaviour:
@@ -373,6 +374,7 @@ MonoBehaviour:
   sentences:
   - text: TARGET HAS ACQUIRED ACCESS KEY. BE ON LOOKOUT.
     textColor: {r: 1, g: 0, b: 0, a: 1}
+    enemy: 1
   repeat: 0
 --- !u!1 &1397627369
 GameObject:
@@ -33956,7 +33958,7 @@ PrefabInstance:
     - target: {fileID: 6973999224675723708, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ebaebb978b3c044e9fea9ae572a0ff9, type: 3}
