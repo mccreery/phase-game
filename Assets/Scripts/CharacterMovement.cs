@@ -63,7 +63,7 @@ public abstract class CharacterMovement : MonoBehaviour
             {
                 velocity.y = jumpVelocity;
             }
-            else
+            else if (HuggingWall)
             {
                 if (lastWallFlags.Any(WallFlags.LeftWall))
                 {
