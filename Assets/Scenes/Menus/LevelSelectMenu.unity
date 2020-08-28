@@ -273,6 +273,7 @@ MonoBehaviour:
     type: 3}
   eventSystem: {fileID: 0}
   levelList: {fileID: 11400000, guid: e7037cd6e71ae5843845705cd057ebd3, type: 2}
+  hasDevice: {fileID: 11400000, guid: 6b7a3724417994d47be9b3a67d7336a9, type: 2}
 --- !u!224 &1297502104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8876868661861821687, guid: 8ad4698f6cf89f5418e4362eeed62857,

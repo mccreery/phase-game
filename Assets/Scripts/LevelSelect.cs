@@ -14,6 +14,8 @@ public class LevelSelect : MonoBehaviour
     [SerializeField]
     private LevelList levelList = default;
 
+    public SharedBool hasDevice;
+
     void Start()
     {
         foreach (NamedScene namedScene in levelList.Levels)
@@ -29,6 +31,7 @@ public class LevelSelect : MonoBehaviour
             Button button = buttonObject.GetComponent<Button>();
             button.onClick.AddListener(() =>
             {
+                hasDevice.Value = namedScene.hasDevice;
                 SceneManager.LoadScene(namedScene.scene);
             });
         }

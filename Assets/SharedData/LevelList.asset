@@ -17,19 +17,24 @@ MonoBehaviour:
       sceneAsset: {fileID: 102900000, guid: 8110db6cc66fd674a917bf88d3950665, type: 3}
       scenePath: Assets/Scenes/Levels/Level 1.unity
     humanName: 'Level 1: Heist'
+    hasDevice: 0
   - scene:
       sceneAsset: {fileID: 102900000, guid: d0a60e58c92f3cc479b734d249d0c89f, type: 3}
       scenePath: Assets/Scenes/Levels/Level 2.unity
     humanName: 'Level 2: Phase'
+    hasDevice: 1
   - scene:
       sceneAsset: {fileID: 102900000, guid: 4acf64c67c6a2564db1b109f631ec5ab, type: 3}
       scenePath: Assets/Scenes/Levels/Level 3.unity
     humanName: 'Level 3: Chase'
+    hasDevice: 1
   - scene:
       sceneAsset: {fileID: 102900000, guid: c8777c8815e89684886447f26381680e, type: 3}
       scenePath: Assets/Scenes/Levels/Level 4.unity
     humanName: 'Level 4: Pursuit'
+    hasDevice: 1
   - scene:
       sceneAsset: {fileID: 102900000, guid: 91fba3df6d4d00941b5e6283235ba995, type: 3}
       scenePath: Assets/Scenes/Levels/Level 5.unity
     humanName: 'Level 5: Gauntlet'
+    hasDevice: 1

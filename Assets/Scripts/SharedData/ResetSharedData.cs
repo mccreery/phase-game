@@ -1,20 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ResetSharedData : MonoBehaviour
 {
     [SerializeField]
-    private FilterType filterType = FilterType.Blacklist;
-
-    public enum FilterType
-    {
-        Whitelist,
-        Blacklist
-    }
-
-    [SerializeField]
-    private Shared[] filterList = default;
+    private Shared[] sharedData = default;
 
     private void Start()
     {
@@ -23,17 +12,7 @@ public class ResetSharedData : MonoBehaviour
 
     public void Reset()
     {
-        IEnumerable<Shared> toReset;
-        if (filterType == FilterType.Whitelist)
-        {
-            toReset = filterList;
-        }
-        else
-        {
-            toReset = Object.FindObjectsOfType<Shared>().Except(filterList);
-        }
-
-        foreach (Shared shared in toReset)
+        foreach (Shared shared in sharedData)
         {
             shared.Reset();
         }

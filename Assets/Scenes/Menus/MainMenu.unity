@@ -4921,8 +4921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4185e56e8707d1340b7cd0857a00ff2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filterType: 1
-  filterList: []
+  sharedData:
+  - {fileID: 11400000, guid: 6b7a3724417994d47be9b3a67d7336a9, type: 2}
 --- !u!1 &731668157
 GameObject:
   m_ObjectHideFlags: 0

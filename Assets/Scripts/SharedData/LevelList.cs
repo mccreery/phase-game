@@ -26,4 +26,5 @@ public struct NamedScene
 {
     public SceneReference scene;
     public string humanName;
+    public bool hasDevice;
 }
