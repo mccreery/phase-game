@@ -24,6 +24,11 @@ public abstract class CharacterMovement : MonoBehaviour
     protected virtual float InputX { get; }
     protected abstract bool IsJumpRequested(bool held);
 
+    protected bool HuggingWall => !lastWallFlags.Any(WallFlags.Floor) && (
+        lastWallFlags.All(WallFlags.LeftWall) && InputX < 0
+            || lastWallFlags.All(WallFlags.RightWall) && InputX > 0
+    );
+
     protected virtual void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -90,7 +95,7 @@ public abstract class CharacterMovement : MonoBehaviour
         animator.SetFloat(HorizontalSpeedKey, Mathf.Abs(rigidbody2D.velocity.x));
         animator.SetFloat(VerticalSpeedKey, rigidbody2D.velocity.y);
         animator.SetBool(GroundedKey, lastWallFlags.Any(WallFlags.Floor));
-        animator.SetBool(TouchingWallKey, lastWallFlags.Any(WallFlags.Horizontal));
+        animator.SetBool(TouchingWallKey, HuggingWall);
         spriteRenderer.flipX = lastFacingLeft;
     }
 }

@@ -13,8 +13,7 @@ public class PlayerMovement : CharacterMovement
 
     private EnergyMeter meter;
 
-    private bool hasKey = false;
-    public bool HasKey => hasKey;
+    public bool HasKey { get; private set; }
 
     public float slideVelocity = -2.0f;
 
@@ -28,8 +27,7 @@ public class PlayerMovement : CharacterMovement
     {
         base.FixedUpdate();
 
-        if (lastWallFlags.Any(WallFlags.Horizontal) && !lastWallFlags.Any(WallFlags.Floor)
-            && rigidbody2D.velocity.y < slideVelocity)
+        if (HuggingWall && rigidbody2D.velocity.y < slideVelocity)
         {
             Vector2 velocity = rigidbody2D.velocity;
             velocity.y = slideVelocity;
@@ -46,7 +44,7 @@ public class PlayerMovement : CharacterMovement
         }
         else if (coll.gameObject.CompareTag("Key"))
         {
-            hasKey = true;
+            HasKey = true;
             Destroy(coll.gameObject);
         }
         else if (coll.gameObject.CompareTag("Takeable"))
