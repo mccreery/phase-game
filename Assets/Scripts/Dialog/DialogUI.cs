@@ -79,7 +79,7 @@ public class DialogUI : MonoBehaviour
             yield return StartCoroutine(DisplayText(next));
             nextSentence = true;
 
-            if (auto)
+            if (auto && !next.wait)
             {
                 yield return new WaitForSeconds(autoDelayPerChar * next.text.Length);
 
@@ -119,4 +119,5 @@ public class DialogText
     public string text;
     public Color textColor;
     public bool enemy;
+    public bool wait;
 }
