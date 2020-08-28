@@ -78,11 +78,13 @@ public class EnergyMeter : MonoBehaviour
             {
                 Phasing = false;
                 Cooldown = 2.0f;
+                ColliderCooldown = 0.1f;
             }
             else if (!button)
             {
                 Phasing = false;
                 Cooldown = 0.1f;
+                ColliderCooldown = 0.1f;
             }
         }
         else if (Energy > 0 && Cooldown == 0 && hasDevice && button)
@@ -92,9 +94,18 @@ public class EnergyMeter : MonoBehaviour
     }
 
     private float cooldownTime;
+    private float colliderCooldownTime;
+
     public float Cooldown
     {
         get => Mathf.Max(0, cooldownTime - Time.time);
         private set => cooldownTime = Time.time + value;
+    }
+
+    // >0 if the player can be killed by a phase wall
+    public float ColliderCooldown
+    {
+        get => Mathf.Max(0, colliderCooldownTime - Time.time);
+        private set => colliderCooldownTime = Time.time + value;
     }
 }
