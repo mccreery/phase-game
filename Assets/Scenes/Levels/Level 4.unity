@@ -2833,6 +2833,36 @@ PrefabInstance:
       propertyPath: phaseWallCollider
       value: 
       objectReference: {fileID: 628938068}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083316226923488873, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
+        type: 3}
+      propertyPath: startSentences.Array.data[0].text
+      value: I think this is still the right way...
+      objectReference: {fileID: 0}
     - target: {fileID: 6725001751424866985, guid: 4ebaebb978b3c044e9fea9ae572a0ff9,
         type: 3}
       propertyPath: limits
