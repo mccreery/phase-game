@@ -972,6 +972,16 @@ PrefabInstance:
       propertyPath: ifPlayer.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: autoDelayPerChar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729862645510539420, guid: 80ac560cc1215df48afaaab9b6727b51,
+        type: 3}
+      propertyPath: typingSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ac560cc1215df48afaaab9b6727b51, type: 3}
 --- !u!224 &8925895274927030947 stripped
