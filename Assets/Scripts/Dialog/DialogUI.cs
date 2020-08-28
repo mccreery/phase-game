@@ -42,16 +42,24 @@ public class DialogUI : MonoBehaviour
         Enqueue(startSentences);
     }
 
-    private IEnumerator DisplayText(string text)
+    private IEnumerator DisplayText(DialogText text)
     {
         textDisplay.text = string.Empty;
 
-        for (int i = 0; i <= text.Length; i++)
+        for (int i = 0; i <= text.text.Length; i++)
         {
-            textDisplay.text = text.Substring(0, i);
+            if (sentenceQueue.Peek() != text)
+            {
+                break;
+            }
+
+            textDisplay.text = text.text.Substring(0, i);
             yield return new WaitForSeconds(typingSpeed);
         }
     }
+
+    public bool auto = false;
+    public float autoDelayPerChar = 0.05f;
 
     public IEnumerator Advance()
     {
@@ -61,17 +69,30 @@ public class DialogUI : MonoBehaviour
         }
         else
         {  
-            DialogText next = sentenceQueue.Dequeue();
+            DialogText next = sentenceQueue.Peek();
 
             textDisplay.color = next.textColor;
             enemyIcon.SetActive(next.enemy);
             friendIcon.SetActive(!next.enemy);
 
             nextSentence = false;
-            //prompt.SetActive(false);
-            yield return StartCoroutine(DisplayText(next.text));
+            yield return StartCoroutine(DisplayText(next));
             nextSentence = true;
-            //prompt.SetActive(true);
+
+            if (auto)
+            {
+                yield return new WaitForSeconds(autoDelayPerChar * next.text.Length);
+
+                if (next == sentenceQueue.Peek())
+                {
+                    sentenceQueue.Dequeue();
+                    yield return Advance();
+                }
+            }
+            else if (next == sentenceQueue.Peek())
+            {
+                sentenceQueue.Dequeue();
+            }
         }
     }
 
@@ -83,6 +104,7 @@ public class DialogUI : MonoBehaviour
 
     public void Enqueue(IEnumerable<DialogText> dialogText)
     {
+        sentenceQueue.Clear();
         foreach (DialogText text in dialogText)
         {
             Enqueue(text);
@@ -92,7 +114,7 @@ public class DialogUI : MonoBehaviour
 }
 
 [Serializable]
-public struct DialogText
+public class DialogText
 {
     public string text;
     public Color textColor;

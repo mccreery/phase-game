@@ -1260,6 +1260,8 @@ MonoBehaviour:
   nextSentence: 0
   friendIcon: {fileID: 5641886063972047664}
   enemyIcon: {fileID: 2138812835033730626}
+  auto: 1
+  autoDelayPerChar: 0.02
 --- !u!114 &7696284498463034790
 MonoBehaviour:
   m_ObjectHideFlags: 0
