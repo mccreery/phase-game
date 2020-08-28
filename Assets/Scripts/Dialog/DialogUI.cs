@@ -17,6 +17,9 @@ public class DialogUI : MonoBehaviour
     public GameObject prompt;
     public bool nextSentence;
 
+    public GameObject friendIcon;
+    public GameObject enemyIcon;
+
     public bool Open
     {
         get => canvasGroup.IsVisible();
@@ -59,7 +62,10 @@ public class DialogUI : MonoBehaviour
         else
         {  
             DialogText next = sentenceQueue.Dequeue();
+
             textDisplay.color = next.textColor;
+            enemyIcon.SetActive(next.enemy);
+            friendIcon.SetActive(!next.enemy);
 
             nextSentence = false;
             //prompt.SetActive(false);
@@ -90,4 +96,5 @@ public struct DialogText
 {
     public string text;
     public Color textColor;
+    public bool enemy;
 }
