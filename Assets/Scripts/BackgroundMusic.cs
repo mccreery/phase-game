@@ -35,4 +35,9 @@ public class BackgroundMusic : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public static AudioSource GetSource()
+    {
+        return GameObject.Find(nameof(BackgroundMusic)).GetComponent<AudioSource>();
+    }
 }

@@ -34,12 +34,19 @@ public class DialogUI : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
-        textDisplay = GetComponentInChildren<Text>();
         sentenceQueue = new Queue<DialogText>();
         Open = false;
-        Enqueue(startSentences);
+        textDisplay = GetComponentInChildren<Text>();
+    }
+
+    private void Start()
+    {
+        if (startSentences.Length > 0)
+        {
+            Enqueue(startSentences);
+        }
     }
 
     private IEnumerator DisplayText(DialogText text)
@@ -77,7 +84,6 @@ public class DialogUI : MonoBehaviour
 
             nextSentence = false;
             yield return StartCoroutine(DisplayText(next));
-            nextSentence = true;
 
             if (auto && !next.wait)
             {
@@ -91,6 +97,7 @@ public class DialogUI : MonoBehaviour
             }
             else if (next == sentenceQueue.Peek())
             {
+                nextSentence = true;
                 sentenceQueue.Dequeue();
             }
         }
